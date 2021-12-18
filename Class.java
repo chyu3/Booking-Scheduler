@@ -4,28 +4,27 @@ import java.util.ArrayList;
 public class Class {
     ArrayList<Student> students;
     private static int counter = 0;
-    private int ClassCode; //A Number that represents one class
+    private String ClassCode; //A Number that represents one class
 
 
     //new class
-    public Class() {
+    public Class(char level, int grade) {
         counter++;
-        ClassCode = counter;
+        ClassCode = Character.toUpperCase(level) + grade + String.format("%d", counter);
         //count how many classes
         //for (i = 1; i < number of classes; i++)
             //a = a + i;
+        students = new ArrayList<>();
     }
 
-
     //load all classes first
-    public Class(int classCode) {
+    public Class(String classCode) {
         ClassCode = classCode;
 
         //Count from existing Classes
-        counter = classCode;
+        counter = Integer.parseInt(classCode.substring(classCode.length()-2));
+        students = new ArrayList<>();
     }
-
-
 
     public int getClassSize()
     {
@@ -37,11 +36,5 @@ public class Class {
         return "Class code: " + getClassCode();
     }
 
-    public static void main (String[] args) {
-
-    }
-
-    public int getClassCode() {
-        return ClassCode;
-    }
+    public String getClassCode() { return ClassCode; }
 }

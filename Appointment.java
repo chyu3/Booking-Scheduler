@@ -1,11 +1,13 @@
 //has and stores Day - Time - (hour, minute and second)
 
 public class Appointment {
-    Object Student;
-
+    Student student;
 
     public void Search (int a){
 
+    }
+    public Appointment (Student student){
+        this.student = student;
     }
 
     //in student database
