@@ -1,4 +1,4 @@
-//call editStudent
+//generate student ID
 
 public class StudentTest {
 

@@ -4,6 +4,10 @@ import java.util.ArrayList;
 //create a new class
 //ArrayList<Class> temp = new ArrayList<>(); // <- TeacherTest?
 
+//----------------------------------
+//add student, delete student, edit student
+
+
 public class ClassTest {
     //stores/manages one class at a time
     // public static ArrayList<Class> classes = new ArrayList<>(); // move to Teacher class
