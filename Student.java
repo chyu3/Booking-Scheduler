@@ -1,6 +1,7 @@
-import java.util.ArrayList;
+import java.util.*;
 
 //generate Students ID
+
 public class Student {
     private String ID;  //7 characters, first 4 index = classCode, last 3 index = number
     //private char Level;
@@ -13,6 +14,9 @@ public class Student {
     {
         this.ID = ID;
         this.Grade = Grade;
+    }
+
+    public Student(char level, int grade, String classCode) {
     }
 
     public static void main (String[] args) {

@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.*;
 //definition of one Class
 
 public class Class {
@@ -24,6 +24,10 @@ public class Class {
         //Count from existing Classes
         counter = Integer.parseInt(classCode.substring(classCode.length()-2));
         students = new ArrayList<>();
+    }
+
+    public Class() {
+
     }
 
     public int getClassSize()
