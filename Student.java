@@ -1,7 +1,7 @@
 import java.util.*;
 
 //generate Students ID
-
+//defines each student
 public class Student {
     private String ID;  //7 characters, first 4 index = classCode, last 3 index = number
     //private char Level;

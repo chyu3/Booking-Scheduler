@@ -1,4 +1,4 @@
-//generate student ID
+//inputting student data
 
 public class StudentTest {
 
