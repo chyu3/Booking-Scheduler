@@ -1,9 +1,8 @@
 //has and stores Day - Time - (hour, minute and second)
-import java.util.*;
 
-public class Appointment {
+public class Appointment extends StudentTest {
     Student student;
-    String ID; //classcode + number
+    String ID; //classCode + number
     int Date;
     int Time;
     int Duration;
@@ -15,15 +14,11 @@ public class Appointment {
         this.student = student;
     }
 
-    //in student database
-    public boolean Check (){
-        return true;
+    //from student database
+    public void check (){
+        return;
     }
 
-    //add student to the queue
-    public void add (String a){
-
-    }
 
     //to remove student from the queue
     public void remove (String a){

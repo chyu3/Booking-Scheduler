@@ -1,26 +1,29 @@
-import java.util.*;
-
 //generate Students ID
 //defines each student
-public class Student {
-    private String ID;  //7 characters, first 4 index = classCode, last 3 index = number
-    //private char Level;
-    private int Grade;
-    //private int Number = 0; //student's number
-    //private static int counter;  //generate ID
 
+public class Student extends ClassCode {
+    private ClassCode ID;  //7 characters, first 4 index = classCode, last 3 index = number
+    private static int Number=0;
     //overloads above method, for existing student ID
-    public Student (String ID, int Grade)
-    {
+
+
+    public String getID() {
+        return ID.toString();
+    }
+
+    public void setID(ClassCode ID) {
         this.ID = ID;
-        this.Grade = Grade;
     }
 
-    public Student(char level, int grade, String classCode) {
+    public Student(char level, int grade, int index) {
+        super();
+        Number++;
+        this.ID = new ClassCode(level, grade, index, Number);
+
     }
 
-    public static void main (String[] args) {
-
-
+    public Student(char level, int grade, int index, int number) {
+        super();
+        this.ID = new ClassCode(level, grade, index, number);
     }
 }
