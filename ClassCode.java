@@ -5,10 +5,16 @@ public class ClassCode {
     public int Index; //class number
     private int Number; //student's number or counter
 
-    public ClassCode() {
-
+/*    public ClassCode() {
     }
-
+*/
+    // overloaded constructor
+    public ClassCode(char level, int grade, int index, int number) {
+        this.Level = level;
+        this.Grade = grade;
+        this.Index = index;
+        this.Number = number;
+    }
 
     public int getNumber() {
         return Number;
@@ -26,21 +32,9 @@ public class ClassCode {
         return Level;
     }
 
-    //Set ID, Level, Grade
-    public ClassCode(char level, int grade, int index, int number) {
-        this.Level = level;
-        this.Grade = grade;
-        this.Index = index;
-        this.Number = number;
-    }
-
     @Override
     public String toString() {
-        return "ID{" +
-                "Level=" + Level +
-                ", Grade=" + Grade +
-                ", Index=" + Index +
-                '}';
+        return Level + Grade+ Index + String.format("%03d", Number);
     }
 
 
