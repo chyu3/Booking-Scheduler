@@ -14,8 +14,7 @@ public class StudentTest {
 
     public static ArrayList<Student> student = new ArrayList<Student>();
 
-    
-    //Making a new student or adding a student to the d
+    //Making a new student to add in arraylist
     public static void newStudent() throws IOException {
         char level = IBIO.inputChar("Enter level ( H for Higher / S for Standard / P for Pre-IB ) : ");
         while (level != 'H' || level != 'S' || level != 'P') {
@@ -33,8 +32,10 @@ public class StudentTest {
             index = IBIO.inputInt("Enter a valid class number (1-10): ");
         }
 
+        //save to the arraylist
         Student newStudent = new Student(level, grade, index);
         student.add(newStudent);
+        //save to a file
         save();
     }
 
@@ -48,7 +49,7 @@ public class StudentTest {
 
     }
 
-    //save to database
+    //save to a file
     public static void save() throws IOException {
         System.out.println("<<< Saving data >>>");
         File studentFile = new File("student.txt");
@@ -71,8 +72,14 @@ public class StudentTest {
         if (!studentFile.exists())
         {
             studentFile.createNewFile();
-            System.out.println("Data file not found. Creating one.");
-            newStudent();
+            char add = IBIO.inputChar("Data file not found. Create a Student?");
+            add = Character.toUpperCase(add);
+            if (add == 'Y')
+            {
+                newStudent();
+                save();
+            }
+            else return;
         }
     }
 }

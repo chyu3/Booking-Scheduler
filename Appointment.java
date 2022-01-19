@@ -2,10 +2,10 @@
 
 public class Appointment extends StudentTest {
     Student student;
-    String ID; //classCode + number
-    int Date;
-    int Time;
-    int Duration;
+    public String ID; //classCode + number
+    public int Date;
+    public Date Time;
+    public int Duration;
 
     public void Search (int a){
 
@@ -24,7 +24,6 @@ public class Appointment extends StudentTest {
     public void remove (String a){
 
     }
-
 
 
 }

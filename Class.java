@@ -3,14 +3,15 @@ import java.util.*;
 
 public class Class {
     ArrayList<Student> students = new ArrayList<>();
-    private static int counter = 0;
-    private String ClassCode; //A Number that represents one class
-
+    private static int counter = 0;  //automatic
+    private String ClassCode;
+    Teacher classSize = getClasses()
 
     //new class
     public Class(char level, int grade) {
         counter++;
-        ClassCode = Character.toUpperCase(level) + grade + String.format("%d", counter);
+        //ClassCode = Level/Grade/Index
+        ClassCode = Character.toUpperCase(level) + grade + String.format("%d", counter); //Automatic counter assigns a number to the class
         //count how many classes
         //for (i = 1; i < number of classes; i++)
             //a = a + i;
@@ -18,11 +19,11 @@ public class Class {
     }
 
     //load all classes first
-    public Class(String classCode) {
-        ClassCode = classCode;
+    public Class(String index) {
+        ClassCode = index;
 
         //Count from existing Classes
-        counter = Integer.parseInt(classCode.substring(classCode.length()-2));
+        counter = Integer.parseInt(index.substring(index.length()-2));
         students = new ArrayList<>();
     }
 

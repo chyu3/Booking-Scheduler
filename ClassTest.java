@@ -23,7 +23,8 @@ public class ClassTest {
         boolean stop = false;
         int noOfStudents = 0;
         char level;
-        int grade = 12;
+        int grade = 11; // or 12 *initialize to either 11 or 12
+
 
         while (noOfStudents < 25 || stop) {
             // teacher inputs student data + validate input
@@ -33,12 +34,13 @@ public class ClassTest {
                 if (level != 'S' || level != 'H') {
                     System.out.print("Error - ");
                 }
-            } while (level != 'S' || level != 'H');//grade is either 11 or 12
+                else level = level;
+            } while (level != 'S' || level != 'H');
 
-
+            int index = IBIO.inputInt("What is the index of this  class? (index<10): ");
             Student newStudent = new Student(level, grade, index);
 
-            //newStudent goes inside students' arraylist which is inside the Class
+            //newStudent is inside students' arraylist which is in the Class
             newClass.students.add(newStudent);
             noOfStudents++;
             char more = IBIO.inputChar("add another student (y/n)? ");
@@ -80,5 +82,6 @@ public class ClassTest {
     public static void main(String[] args) {
         addClass();
     }
+
 }
 

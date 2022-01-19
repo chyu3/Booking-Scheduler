@@ -17,5 +17,6 @@ public class AppointmentManager {
 
     }
 
+    //2D array (prints scheduler) : after ID and time assigned
 
 }
