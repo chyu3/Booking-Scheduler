@@ -14,6 +14,8 @@ public class StudentTest {
 
     public static ArrayList<Student> student = new ArrayList<Student>();
 
+    
+    //Making a new student or adding a student to the d
     public static void newStudent() throws IOException {
         char level = IBIO.inputChar("Enter level ( H for Higher / S for Standard / P for Pre-IB ) : ");
         while (level != 'H' || level != 'S' || level != 'P') {
@@ -51,10 +53,10 @@ public class StudentTest {
         System.out.println("<<< Saving data >>>");
         File studentFile = new File("student.txt");
         FileWriter fw = new FileWriter(studentFile);
-        PrintWriter out = new PrintWriter(fw);	// write mode
-        for (Student s : student)  //loop to save each element ->
+        PrintWriter out = new PrintWriter(fw);
+        for (Student s : student)  //save each element
         {
-            out.println(s.getLevel());//of the list to the file
+            out.println(s.getLevel());
             out.println(s.getGrade());
             out.println(s.getIndex());
             out.println(s.getNumber());

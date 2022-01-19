@@ -38,7 +38,7 @@ public class ClassTest {
 
             Student newStudent = new Student(level, grade, index);
 
-            //newStudent goes inside students's arraylist which is inside the Class
+            //newStudent goes inside students' arraylist which is inside the Class
             newClass.students.add(newStudent);
             noOfStudents++;
             char more = IBIO.inputChar("add another student (y/n)? ");

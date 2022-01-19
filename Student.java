@@ -27,19 +27,22 @@ public class Student {
         this.ID = new ClassCode(level, grade, index, number);
     }
 
-    public char getStudentLevel() {
+    public char getLevel() {
         return this.getID().getLevel();
     }
 
-    public int getStudentIndex()
+    public int getIndex()
     {
         return this.getID().getIndex();
     }
 
-    public int getStudentGrade() {
+    public int getGrade() {
         return this.getID().getGrade();
     }
 
+    public int getNumber(){
+        return this.getID().getNumber();
+    }
 
 
 }
