@@ -8,30 +8,38 @@ import java.util.ArrayList;
 //add student, delete student, edit student
 
 
-public class ClassTest {
+public class ClassTest
+{
     //stores/manages one class at a time
     // public static ArrayList<Class> classes = new ArrayList<>(); // move to Teacher class
 
-    public static void addClass() {
-
-        //Calls empty constructor of Class()
-        Class newClass = new Class();
+    public static void addClass()
+    {
         boolean stop = false;
         int noOfStudents = 0;
-        while (noOfStudents < 25 || stop) {
+
+        char level = IBIO.inputChar("Level (S=SL; H=HL)? ");
+        do
+        {
+            level = IBIO.inputChar("Level? ");
+            level = Character.toUpperCase(level);
+            if (level != 'S' || level != 'H')
+            {
+                System.out.print("Error - ");
+            }
+        } while (level != 'S' || level != 'H');
+
+        while (noOfStudents < 25 || stop)
+        {
             // teacher inputs student data + validate input
-            char level;
-            do {
-                level = IBIO.inputChar("Level? ");
-                level = Character.toUpperCase(level);
-                if (level != 'S' || level != 'H') {
-                    System.out.print("Error - ");
-                }
-            } while (level != 'S' || level != 'H');
 
-            int grade = 12; //grade is either 11 or 12
-
-            Student newStudent = new Student(level, grade, newClass.getClassCode());
+            int grade = IBIO.inputInt("Grade (11 or 12)? "); //grade is either 11 or 12
+            while(grade < 11 || grade > 12)
+            {
+                grade = IBIO.inputInt("Please re-enter Grade (only 11 or 12): "); //grade is either 11 or 12
+            }
+            Class newClass = new Class(level, grade);
+            Student newStudent = new Student(newClass.getClassCode(), level, grade);
 
             //newStudent goes inside students's arraylist which is inside the Class
             newClass.students.add(newStudent);
@@ -42,7 +50,8 @@ public class ClassTest {
         }
     }
 
-    public static void editClass() {
+    public static void editClass()
+    {
         //call studentTest
         //create a new class
         //ArrayList<Class> temp = new ArrayList<>(); // <- TeacherTest?
@@ -53,13 +62,16 @@ public class ClassTest {
 
         boolean stop = false;
         int noOfStudents = 0;
-        while (noOfStudents < 25 || stop) {
+        while (noOfStudents < 25 || stop)
+        {
             // teacher inputs student data + validate input
             char level;
-            do {
+            do
+            {
                 level = IBIO.inputChar("Level? ");
                 level = Character.toUpperCase(level);
-                if (level != 'S' || level != 'H') {
+                if (level != 'S' || level != 'H')
+                {
                     System.out.print("Error - ");
                 }
             } while (level != 'S' || level != 'H');
@@ -83,7 +95,8 @@ public class ClassTest {
 
     //}
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         addClass();
     }
 }
