@@ -46,6 +46,7 @@ public class ClassTest
         {
             // teacher inputs student data + validate input
 <<<<<<< Updated upstream
+
             // input student data here
             //newStudent goes inside students's arraylist which is inside the Class
             
