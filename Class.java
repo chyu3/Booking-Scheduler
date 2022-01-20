@@ -3,24 +3,14 @@ import java.util.*;
 
 public class Class {
     ArrayList<Student> students = new ArrayList<>();
-    private static int counter = 0;  //automatic
+    //private static int counter = 0;  //automatic
     private String ClassCode;
     private Teacher classSize; //=Teacher getClasses();
 
-    //new class
-    public Class(char level, int grade) {
-        counter++;
+    //new class, teacher inputs all information
+    public Class(char level, int grade, int index) {
         //ClassCode = Level/Grade/Index
-        ClassCode = Character.toUpperCase(level) + grade + String.format("%d", counter); //Automatic counter assigns a number to the class
-        students = new ArrayList<>();
-    }
-
-    //load all classes first
-    public Class(String index) {
-        ClassCode = index;
-
-        //Count from existing Classes
-        counter = Integer.parseInt(index.substring(index.length()-2));
+        ClassCode = Character.toUpperCase(level) + grade + String.format("%d", index); //Automatic counter assigns a number to the class
         students = new ArrayList<>();
     }
 
