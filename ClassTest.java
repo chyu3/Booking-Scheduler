@@ -29,19 +29,19 @@ public class ClassTest
             }
         } while (level != 'S' || level != 'H');
 
+        int grade = IBIO.inputInt("Grade (11 or 12)? "); //grade is either 11 or 12
+        while(grade < 11 || grade > 12)
+        {
+            grade = IBIO.inputInt("Please re-enter Grade (only 11 or 12): "); //grade is either 11 or 12
+        }
+        Class newClass = new Class(level, grade);
+        Student newStudent = new Student(newClass.getClassCode(), level, grade);
         while (noOfStudents < 25 || stop)
         {
             // teacher inputs student data + validate input
-
-            int grade = IBIO.inputInt("Grade (11 or 12)? "); //grade is either 11 or 12
-            while(grade < 11 || grade > 12)
-            {
-                grade = IBIO.inputInt("Please re-enter Grade (only 11 or 12): "); //grade is either 11 or 12
-            }
-            Class newClass = new Class(level, grade);
-            Student newStudent = new Student(newClass.getClassCode(), level, grade);
-
+            // input student data here
             //newStudent goes inside students's arraylist which is inside the Class
+            
             newClass.students.add(newStudent);
             noOfStudents++;
             char more = IBIO.inputChar("add another student (y/n)? ");
