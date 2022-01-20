@@ -18,7 +18,7 @@ public class ClassTest
         boolean stop = false;
         int noOfStudents = 0;
 
-        char level = IBIO.inputChar("Level (S=SL; H=HL)? ");
+        char level;
         do
         {
             level = IBIO.inputChar("Level? ");
@@ -39,9 +39,21 @@ public class ClassTest
         while (noOfStudents < 25 || stop)
         {
             // teacher inputs student data + validate input
+<<<<<<< Updated upstream
             // input student data here
             //newStudent goes inside students's arraylist which is inside the Class
             
+=======
+            int grade = IBIO.inputInt("Grade (11 or 12)? "); //grade is either 11 or 12
+            while(grade < 11 || grade > 12)
+            {
+                grade = IBIO.inputInt("Please re-enter Grade (only 11 or 12): "); //grade is either 11 or 12
+            }
+            Class newClass = new Class(level, grade);
+            Student newStudent = new Student(newClass.getClassCode(), level, grade);
+
+            //newStudent goes inside students' arraylist which is inside the Class
+>>>>>>> Stashed changes
             newClass.students.add(newStudent);
             noOfStudents++;
             char more = IBIO.inputChar("add another student (y/n)? ");
