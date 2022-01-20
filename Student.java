@@ -19,7 +19,6 @@ public class Student {
         //super();
         Number++;
         this.ID = new ClassCode(level, grade, index, Number);
-
     }
 
     public Student(char level, int grade, int index, int number) {

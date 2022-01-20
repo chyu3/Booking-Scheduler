@@ -39,13 +39,27 @@ public class StudentTest {
         save();
     }
 
+    public static int searchByID(int id)
+    {
+        for (int i = 0; i< student.size(); i++){
+            if (student.get(i).getID() == id){
+                return i;
+            }
+            return -1;
+        }
+    }
+
     //change level, grade, index, number
     public static void editStudent(){
         //find ID
+        String id = IBIO.inputString("Enter the Student ID: ");
+        do {
+
+
+        } while(id = true);
         //new input
 
-    }
-    public static void main(String[] args){
+        Student New = new Student(char level, int grade, int index);
 
     }
 

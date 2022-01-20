@@ -5,16 +5,13 @@ public class Class {
     ArrayList<Student> students = new ArrayList<>();
     private static int counter = 0;  //automatic
     private String ClassCode;
-    Teacher classSize = getClasses()
+    private Teacher classSize; //=Teacher getClasses();
 
     //new class
     public Class(char level, int grade) {
         counter++;
         //ClassCode = Level/Grade/Index
         ClassCode = Character.toUpperCase(level) + grade + String.format("%d", counter); //Automatic counter assigns a number to the class
-        //count how many classes
-        //for (i = 1; i < number of classes; i++)
-            //a = a + i;
         students = new ArrayList<>();
     }
 
