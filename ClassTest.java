@@ -15,9 +15,15 @@ public class ClassTest
 
     public static void addClass()
     {
+<<<<<<< Updated upstream
+=======
+        //Calls empty constructor of Class()
+        Class newClass = new Class();
+>>>>>>> Stashed changes
         boolean stop = false;
         int noOfStudents = 0;
 
+<<<<<<< Updated upstream
         char level;
         do
         {
@@ -54,11 +60,38 @@ public class ClassTest
 
             //newStudent goes inside students' arraylist which is inside the Class
 >>>>>>> Stashed changes
+=======
+        while (noOfStudents < 25 || stop)
+        {
+            // teacher inputs student data + validate input
+            do
+            {
+                level = IBIO.inputChar("Level? ");
+                level = Character.toUpperCase(level);
+                if (level != 'S' || level != 'H')
+                {
+                    System.out.print("Error - ");
+                } else level = level;
+            } while (level != 'S' || level != 'H');
+
+            int index = IBIO.inputInt("What is the index of this  class? (index<10): ");
+            Student newStudent = new Student(level, grade, index);
+            System.out.println(newStudent);
+            //newStudent is inside students' arraylist which is in the Class
+>>>>>>> Stashed changes
             newClass.students.add(newStudent);
-            noOfStudents++;
+            //noOfStudents++;
             char more = IBIO.inputChar("add another student (y/n)? ");
+<<<<<<< Updated upstream
             if (more == 'N' || more == 'n' || noOfStudents > 25)
                 stop = true;
+=======
+            while (noOfStudents < 25)
+            {
+                if (more == 'N' || more == 'n')
+                    stop = true;
+            }
+>>>>>>> Stashed changes
         }
     }
 
@@ -105,8 +138,11 @@ public class ClassTest
 */
     //public static void delete(){
 
+<<<<<<< Updated upstream
     //}
 
+=======
+>>>>>>> Stashed changes
     public static void main(String[] args)
     {
         addClass();
