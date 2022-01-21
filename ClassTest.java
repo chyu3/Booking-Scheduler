@@ -34,13 +34,28 @@ public class ClassTest {
         //teacher inputs/assign grade for the class manually
 
         while (noOfStudents < 25 || stop) {
-            //newStudent is inside students' arraylist which is in the Class
             int grade = IBIO.inputInt("Grade (11 or 12)? "); //grade is either 11 or 12
             while (grade < 11 || grade > 12) {
                 grade = IBIO.inputInt("Please re-enter Grade (only 11 or 12): "); //grade is either 11 or 12
             }
+
             Class newClass = new Class(level, grade);
-            Student newStudent = new Student(newClass.getClassCode(), level, grade);
+            int index = IBIO.inputInt("What is the index of this  class? (index<10): ");
+            Student newStudent = new Student(level, grade, index);
+
+            System.out.println(newStudent);
+
+            newClass.students.add(newStudent);
+            char more = IBIO.inputChar("add another student (y/n)? ");
+
+            //newStudent is inside students' arraylist which is in the Class
+            if (more == 'N' || more == 'n' || noOfStudents > 25)
+                stop = true;
+            while (noOfStudents < 25)
+            {
+                if (more == 'N' || more == 'n')
+                    stop = true;
+            }
         }
     }
 
