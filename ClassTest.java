@@ -17,38 +17,30 @@ public class ClassTest {
     // public static ArrayList<Class> classes = new ArrayList<>(); // move to Teacher class
     public static ArrayList<Class> classes = new ArrayList<Class>();
 
-    public static void addClass(){
-        //Calls empty constructor of Class()
-        Class newClass = new Class();
+    public static void addClass() {
         boolean stop = false;
         int noOfStudents = 0;
         char level;
 
-        do
-        {
+        //teacher input/assign Class level
+        do {
             level = IBIO.inputChar("Level? ");
             level = Character.toUpperCase(level);
-            if (level != 'S' || level != 'H')
-            {
+            if (level != 'S' || level != 'H') {
                 System.out.print("Error - ");
             }
         } while (level != 'S' || level != 'H');
 
         //teacher inputs/assign grade for the class manually
-        int grade = IBIO.inputInt("Grade (11 or 12)? "); //grade is either 11 or 12
-        while(grade < 11 || grade > 12)
-        {
-            grade = IBIO.inputInt("Please re-enter Grade (only 11 or 12): "); //grade is either 11 or 12
-        }
-        while (noOfStudents < 25 || stop)
-        {
+
+        while (noOfStudents < 25 || stop) {
             //newStudent is inside students' arraylist which is in the Class
-            newClass.students.add(newStudent);
-            char more = IBIO.inputChar("add another student (y/n)? ");
-            while (noOfStudents < 25) {
-                if (more == 'N' || more == 'n')
-                    stop = true;
+            int grade = IBIO.inputInt("Grade (11 or 12)? "); //grade is either 11 or 12
+            while (grade < 11 || grade > 12) {
+                grade = IBIO.inputInt("Please re-enter Grade (only 11 or 12): "); //grade is either 11 or 12
             }
+            Class newClass = new Class(level, grade);
+            Student newStudent = new Student(newClass.getClassCode(), level, grade);
         }
     }
 

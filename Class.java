@@ -18,6 +18,9 @@ public class Class {
 
     }
 
+    public Class(char level, int grade) {
+    }
+
     public int getClassSize()
     {
         return students.size();
