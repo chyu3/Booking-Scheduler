@@ -60,11 +60,7 @@ public class ClassTest {
     }
 
     public static void editClass() {
-        //call studentTest
-        //create a new class
         //ArrayList<Class> temp = new ArrayList<>(); // <- TeacherTest?
-
-        //Calls empty constructor of Class()
         // input class code
         // search class
 
@@ -87,8 +83,53 @@ public class ClassTest {
         }
     }
 
-    public static void delete(){
-        
+    public static void delete(String classCode)
+    {
+        for (int i = 0; i < classes.size(); i++)
+        {
+            Class currentClass = classes.get(i);
+            String currentClassCode = currentClass.getClassCode();
+            if(currentClassCode.equals(classCode))
+            {
+                System.out.println("Searching success! Continue to delete " + currentClassCode);
+                if(confirm() == true)
+                {
+
+                }
+            }
+        }
+    }
+
+    public static boolean confirm(){
+        char temp = ' ';
+        String answer = IBIO.input("Are you sure (Y/N)? ");
+        answer = answer.toLowerCase();
+        if (answer.length() > 0)
+        {
+            temp = answer.charAt(0);
+        }
+        while (answer.length() < 1 || (temp != 'y' && temp != 'n'))
+        {
+            answer = IBIO.input("Please answer Y or N / y or n: ");
+            answer = answer.toLowerCase();
+            System.out.println(answer.length());
+            if (answer.length() > 0)
+            {
+                temp = answer.charAt(0);
+            }
+        }
+        return (temp == 'y');
+    }
+
+    public static void load(){
+
+    }
+
+    public static void listClasses(){
+        String currentClass;
+        for (Class A: classes ){
+            
+        }
     }
 
     public static void main(String[] args) {

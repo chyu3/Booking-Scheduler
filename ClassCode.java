@@ -5,9 +5,11 @@ public class ClassCode {
     public int Index; //class number
     private int Number; //student's number or counter
 
-/*    public ClassCode() {
+    public ClassCode(char level, int grade, int index){
+        this.Level= level;
+        this.Grade = grade;
+        this.Index = index;
     }
-*/
     // overloaded constructor
     public ClassCode(char level, int grade, int index, int number) {
         this.Level = level;

@@ -5,6 +5,9 @@ public class Class {
     ArrayList<Student> students = new ArrayList<>();
     //private static int counter = 0;  //automatic
     private String ClassCode;
+    private char ClassLevel;
+    private int ClassGrade;
+    private int ClassIndex;
     private Teacher classSize; //=Teacher getClasses();
 
     //new class, teacher inputs all information
@@ -32,4 +35,16 @@ public class Class {
     }
 
     public String getClassCode() { return ClassCode; }
+
+    public char getClassLevel() {
+        return ClassLevel;
+    }
+
+    public int getClassGrade() {
+        return ClassGrade;
+    }
+
+    public int getClassIndex() {
+        return ClassIndex;
+    }
 }
