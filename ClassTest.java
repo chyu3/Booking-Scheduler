@@ -87,6 +87,10 @@ public class ClassTest {
         }
     }
 
+    public static void delete(){
+        
+    }
+
     public static void main(String[] args) {
         addClass();
     }
