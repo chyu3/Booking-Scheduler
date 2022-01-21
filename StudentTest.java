@@ -12,7 +12,7 @@ import java.util.*;
 
 public class StudentTest {
 
-    public static ArrayList<Student> student = new ArrayList<Student>();
+    public static ArrayList<Student> students = new ArrayList<Student>();
 
     //Making a new student to add in arraylist
     public static void newStudent() throws IOException {
@@ -34,15 +34,15 @@ public class StudentTest {
 
         //save to the arraylist
         Student newStudent = new Student(level, grade, index);
-        student.add(newStudent);
+        students.add(newStudent);
         //save to a file
         save();
     }
 
-    public static int searchByID(int id)
+    public static int searchByID(String id)
     {
-        for (int i = 0; i< student.size(); i++){
-            if (student.get(i).getID() == id){
+        for (int i = 0; i< students.size(); i++){
+            if (students.get(i).getID().equals(id)){
                 return i;
             }
             return -1;
@@ -50,18 +50,36 @@ public class StudentTest {
     }
 
     //change level, grade, index, number
-    public static void editStudent(){
+    public static void editStudent(char level, int grade, int index){
         //find ID
         String id = IBIO.inputString("Enter the Student ID: ");
         do {
 
 
-        } while(id = true);
+        } while(id == true);
         //new input
 
-        Student New = new Student(char level, int grade, int index);
+        Student New = new Student( level,  grade,  index);
 
     }
+
+    /*public static void delete(ClassCode classCode)
+    {
+        for (int i = 0; i < classes.size(); i++)
+        {
+            Class currentClass = classes.get(i);
+            String currentClassCode = currentClass.getClassCode();
+            if(currentClassCode.equals(classCode))
+            {
+                System.out.println("Searching success! Continue to delete " + currentClassCode);
+                if(confirm() == true)
+                {
+
+                }
+            }
+        }
+     }
+    */
 
     //save to a file
     public static void save() throws IOException {
@@ -69,7 +87,7 @@ public class StudentTest {
         File studentFile = new File("student.txt");
         FileWriter fw = new FileWriter(studentFile);
         PrintWriter out = new PrintWriter(fw);
-        for (Student s : student)  //save each element
+        for (Student s : students)  //save each element
         {
             out.println(s.getLevel());
             out.println(s.getGrade());
@@ -95,5 +113,20 @@ public class StudentTest {
             }
             else return;
         }
+    }
+
+    //search and list students by entering the level
+    public static void listStudents(char Level){
+        char currentStudent;
+        for (Student A: students){
+            currentStudent = Character.toUpperCase( A.getLevel() );
+            if ( currentStudent == Character.toUpperCase(Level) ){
+                System.out.println(A);
+            }
+        }
+    }
+
+    public static void delete (char Level, int Grade, int Index){
+
     }
 }

@@ -1,3 +1,5 @@
+import java.util.Locale;
+
 public class ClassCode {
     //ClassCode parameters
     private char Level;
@@ -5,11 +7,12 @@ public class ClassCode {
     public int Index; //class number
     private int Number; //student's number or counter
 
-    public ClassCode(char level, int grade, int index){
-        this.Level= level;
+    public ClassCode(char level, int grade, int index) {
+        this.Level = level;
         this.Grade = grade;
         this.Index = index;
     }
+
     // overloaded constructor
     public ClassCode(char level, int grade, int index, int number) {
         this.Level = level;
@@ -36,11 +39,27 @@ public class ClassCode {
 
     @Override
     public String toString() {
-        return Level + Grade+ Index + String.format("%03d", Number);
+        return Level + Grade + Index + String.format("%03d", Number);
     }
 
+    // polym
+    //compare classcodes
+    public boolean equals(ClassCode cc)
+    {
+        String c1 = this.toString().toUpperCase();
+        String c2 = cc.toString().toUpperCase();
+        return c1.equals(c2);
 
+    }
 
+    public boolean equals(String cc)
+    {
+        String c1 = this.toString().toUpperCase();
+        String c2 = cc.toUpperCase();
+        return c1.equals(c2);
+
+    }
+    
 
 }
 

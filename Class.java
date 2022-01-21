@@ -2,6 +2,7 @@ import java.util.*;
 //definition of one Class
 
 public class Class {
+    //arraylist of students in one class
     ArrayList<Student> students = new ArrayList<>();
     //private static int counter = 0;  //automatic
     private String ClassCode;

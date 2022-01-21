@@ -33,6 +33,7 @@ public class ClassTest {
 
         //teacher inputs/assign grade for the class manually
 
+        //create object
         while (noOfStudents < 25 || stop) {
             int grade = IBIO.inputInt("Grade (11 or 12)? "); //grade is either 11 or 12
             while (grade < 11 || grade > 12) {
@@ -83,22 +84,6 @@ public class ClassTest {
         }
     }
 
-    public static void delete(String classCode)
-    {
-        for (int i = 0; i < classes.size(); i++)
-        {
-            Class currentClass = classes.get(i);
-            String currentClassCode = currentClass.getClassCode();
-            if(currentClassCode.equals(classCode))
-            {
-                System.out.println("Searching success! Continue to delete " + currentClassCode);
-                if(confirm() == true)
-                {
-
-                }
-            }
-        }
-    }
 
     public static boolean confirm(){
         char temp = ' ';
@@ -125,10 +110,14 @@ public class ClassTest {
 
     }
 
-    public static void listClasses(){
+    //input ClassCode = level + grade  e.g. Classes that are Higher level and grade 12  would be H12
+    public static void listClasses(String ClassCode){
         String currentClass;
         for (Class A: classes ){
-            
+            currentClass = A.getClassCode();
+            if ( currentClass.startsWith(ClassCode)){
+                System.out.println(A);
+            }
         }
     }
 
