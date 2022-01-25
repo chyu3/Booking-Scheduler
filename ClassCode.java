@@ -42,8 +42,8 @@ public class ClassCode {
         return Level + Grade + Index + String.format("%03d", Number);
     }
 
-    // polym
-    //compare classcodes
+    // polymorphism
+    //compare classCodes
     public boolean equals(ClassCode cc)
     {
         String c1 = this.toString().toUpperCase();
@@ -59,7 +59,7 @@ public class ClassCode {
         return c1.equals(c2);
 
     }
-    
+
 
 }
 
