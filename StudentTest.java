@@ -45,8 +45,8 @@ public class StudentTest {
             if (students.get(i).getID().equals(id)){
                 return i;
             }
-            return -1;
         }
+        return -1;
     }
 
     //change level, grade, index, number
@@ -56,7 +56,7 @@ public class StudentTest {
         do {
 
 
-        } while(id == true);
+        } while(id.equalsIgnoreCase("") == true);
         //new input
 
         Student New = new Student( level,  grade,  index);
