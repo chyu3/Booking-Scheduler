@@ -10,7 +10,6 @@ public class TeacherMenu {
         options (methods to use)
         switch ()
 
-
          */
         System.out.println("      ******************");
         System.out.println("      *  " + "Teacher Menu" + "  *");
