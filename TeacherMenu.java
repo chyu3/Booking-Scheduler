@@ -6,15 +6,17 @@ public class TeacherMenu {
         //continue from main menu
         boolean continues = true;
         //TeacherTest.load();
-        /*do while loop
-        options (methods to use)
-        switch ()
 
-         */
-        System.out.println("      ******************");
-        System.out.println("      *  " + "Teacher Menu" + "  *");
-        System.out.println("_______________________________________");
-        System.out.println("  |  add class  |  edit class  |  ");
-        System.out.println("");
+        System.out.println("+---------------******************----------------+");
+        System.out.println("|               *  " + "Teacher Menu" + "  *                |");
+        System.out.println("|_________________________________________________|");
+        System.out.println("|     add class  |  edit class  |  view class");
+        System.out.println("|        ⬇             ⬇              ⬇");
+        System.out.println("|        C              E              K ");
+        System.out.println("|_________________________________________________");
+        System.out.println("|   add student | edit student | delete student ");
+        System.out.println("|        ⬇             ⬇              ⬇");
+        System.out.println("|        S              U              D ");
+
     }
 }

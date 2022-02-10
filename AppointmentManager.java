@@ -17,6 +17,10 @@ public class AppointmentManager {
 
     }
 
+    public static void main(String[] args) {
+
+    }
+
     //2D array (prints scheduler) : after ID and time assigned
 
 }
