@@ -63,6 +63,12 @@ public class StudentTest {
 
     }
 
+    public static void delete (char Level, int Grade, int Index){
+        //student number input to be reconsidered
+        //as less likely to be memorized by teacher
+
+
+    }
     /*public static void delete(ClassCode classCode)
     {
         for (int i = 0; i < classes.size(); i++)
@@ -126,7 +132,4 @@ public class StudentTest {
         }
     }
 
-    public static void delete (char Level, int Grade, int Index){
-
-    }
 }
