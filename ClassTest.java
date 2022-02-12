@@ -52,8 +52,7 @@ public class ClassTest {
             //newStudent is inside students' arraylist which is in the Class
             if (more == 'N' || more == 'n' || noOfStudents > 25)
                 stop = true;
-            while (noOfStudents < 25)
-            {
+            while (noOfStudents < 25) {
                 if (more == 'N' || more == 'n')
                     stop = true;
             }
@@ -85,37 +84,62 @@ public class ClassTest {
     }
 
 
-    public static boolean confirm(){
+    public static boolean confirm() {
         char temp = ' ';
         String answer = IBIO.input("Are you sure (Y/N)? ");
         answer = answer.toLowerCase();
-        if (answer.length() > 0)
-        {
+        if (answer.length() > 0) {
             temp = answer.charAt(0);
         }
-        while (answer.length() < 1 || (temp != 'y' && temp != 'n'))
-        {
+        while (answer.length() < 1 || (temp != 'y' && temp != 'n')) {
             answer = IBIO.input("Please answer Y or N / y or n: ");
             answer = answer.toLowerCase();
             System.out.println(answer.length());
-            if (answer.length() > 0)
-            {
+            if (answer.length() > 0) {
                 temp = answer.charAt(0);
             }
         }
         return (temp == 'y');
     }
 
-    public static void load(){
+    public static void load() {
 
     }
 
+
+    public static int findClass(String classCode) {
+        for (int i = 0; i < classes.size(); i++) {
+            if (classes.get(i).getClassCode().equalsIgnoreCase(classCode))
+                return i;
+        }
+        return -1;
+    }
+
+    public static int findStudent(int classIndex, String studentCode) {
+        for (int i = 0; i < classes.get(classIndex).students.size(); i++) {
+            if (classes.get(classIndex).students.get(i).getID().toString().equalsIgnoreCase(studentCode))
+                return i;
+        }
+        return -1;
+    }
+
+    public static void removeStudent(int classIndex, int studentIndex) {
+        System.out.println("Removing " + classes.get(classIndex).students.get(studentIndex).getID() + "from " +
+                classes.get(classIndex).getClassCode());
+        System.out.print("Are you really sure? ");
+        if (confirm() == true) {
+            classes.get(classIndex).students.remove(studentIndex);
+            System.out.println("removed student from " + classes.get(classIndex).getClassCode());
+        } else
+            System.out.println("Removal cancelled.");
+    }
+
     //input ClassCode = level + grade  e.g. Classes that are Higher level and grade 12  would be H12
-    public static void listClasses(String ClassCode){
+    public static void listClasses(String ClassCode) {
         String currentClass;
-        for (Class A: classes ){
+        for (Class A : classes) {
             currentClass = A.getClassCode();
-            if ( currentClass.startsWith(ClassCode)){
+            if (currentClass.startsWith(ClassCode)) {
                 System.out.println(A);
             }
         }

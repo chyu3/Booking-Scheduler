@@ -18,6 +18,10 @@ public class mainMenu {
             char level;
             int grade ;
             int index;
+            String classCode;  //H1101
+            String studentCode; //full ID
+            int classIndex;  //1 <= x <= 10
+            int studentIndex;  //x > 0
 
             //'if else' loop to distinguish teacher and student access to actions
             char user = IBIO.inputChar("Are you teacher or student (t/s): ");
@@ -48,12 +52,10 @@ public class mainMenu {
                         StudentTest.editStudent(level, grade, index);
                         break;
                     case 'D':
-                        level = IBIO.inputChar("HL or SL or Pre-IB (Enter h, s or p): ");
-                        grade = IBIO.inputInt("Grade? (11 or 12): ");
-                        index = IBIO.inputInt("class number? < 10: ");
-                        //number = IBIO.inputInt("Student number?")
-                        //!number less likely to be memorized by teacher
-                        StudentTest.delete(level, grade, index);
+                        classIndex = IBIO.inputInt("HL or SL or Pre-IB (Enter h, s or p): ");
+                        studentIndex = IBIO.inputInt("Grade? (11 or 12): ");
+
+                        ClassTest.removeStudent(classIndex, studentIndex);
                         break;
                 }
             }
