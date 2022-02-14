@@ -2,13 +2,6 @@ import java.io.IOException;
 
 public class mainMenu {
     public static void main(String[] args) throws IOException {
-        /*do while loop
-        options/decision parameter (methods to use)
-            switch (decision){
-                case '':
-                    StudentTest.main(null);
-                    break;
-         */
         boolean continues = true;
         do{
             char level;
@@ -63,12 +56,17 @@ public class mainMenu {
                 }
             }
             else {
-                char decisions = IBIO.inputChar("Enter the action you want to perform\n");
+                char decisions = IBIO.inputChar("Enter a letter for the action you want to perform\n");
                 decisions = Character.toUpperCase(decisions);
                 StudentMenu.main(null);
 
                 switch (decisions){
-                    case 'A':
+                    case 'C':
+                        studentCode = IBIO.input("Enter a student ID: ");
+                        IOManager.add(null);
+                        break;
+                    case 'S':
+                        studentCode = IBIO.input("Enter a student ID: ");
                         AppointmentManager.add(null);
                 }
             }

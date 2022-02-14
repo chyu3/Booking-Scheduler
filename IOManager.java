@@ -1,10 +1,7 @@
-import java.util.*;
+import java.util.ArrayList;
 
-public class AppointmentManager {
-
-    ArrayList<Appointment> appointments;
-
-    //add an appointment
+public class IOManager {
+    ArrayList<IO> io;
     public static void add (String ID){
 
     }
@@ -17,7 +14,4 @@ public class AppointmentManager {
     public static void main(String[] args) {
 
     }
-
-    //2D array (prints scheduler) : after ID and time assigned
-
 }

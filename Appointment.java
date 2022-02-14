@@ -19,11 +19,4 @@ public class Appointment extends StudentTest {
         return;
     }
 
-
-    //to remove student from the queue
-    public void remove (String a){
-
-    }
-
-
 }
