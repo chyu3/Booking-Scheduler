@@ -10,7 +10,7 @@ public class AppointmentManager {
     }
 
 
-    public void delete (String ID){
+    public static void delete (String ID){
 
     }
 

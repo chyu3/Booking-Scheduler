@@ -8,10 +8,6 @@ public class mainMenu {
                 case '':
                     StudentTest.main(null);
                     break;
-
-                case '':
-
-
          */
         boolean continues = true;
         do{
@@ -52,11 +48,18 @@ public class mainMenu {
                         StudentTest.editStudent(level, grade, index);
                         break;
                     case 'D':
-                        classIndex = IBIO.inputInt("HL or SL or Pre-IB (Enter h, s or p): ");
-                        studentIndex = IBIO.inputInt("Grade? (11 or 12): ");
+                        classIndex = IBIO.inputInt("Class Index? (1 to 10): ");
+                        studentIndex = IBIO.inputInt("Student Number? (11 or 12): ");
 
                         ClassTest.removeStudent(classIndex, studentIndex);
                         break;
+                    case 'X':
+                        studentCode = IBIO.input("Please enter a student ID: ");
+                        AppointmentManager.add(studentCode);
+                        break;
+                    case 'T':
+                        studentCode = IBIO.input("Please enter a student ID: ");
+                        AppointmentManager.delete(studentCode);
                 }
             }
             else {

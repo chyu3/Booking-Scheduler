@@ -18,8 +18,8 @@ public class TeacherMenu {
         System.out.println("|        ⬇             ⬇              ⬇");
         System.out.println("|        S              U              D ");
         System.out.println("|_________________________________________________");
-        System.out.println("|       New appointment | delete appointment ");
-        System.out.println("|             ⬇                    ⬇");
-        System.out.println("|             X                     T ");
+        System.out.println("|  New Oral appointment | Delete Oral appointment ");
+        System.out.println("|            ⬇                    ⬇");
+        System.out.println("|            X                     T ");
     }
 }
