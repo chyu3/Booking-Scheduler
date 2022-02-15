@@ -265,13 +265,9 @@ public class Date
 
     public boolean equals(Date date2)
     {
-        boolean equal = false;
-        if (this.getDay() == date2.getDay()
+        boolean equal = this.getDay() == date2.getDay()
                 && this.getMonth() == date2.getMonth()
-                && this.getYear() == date2.getYear())
-        {
-            equal = true;
-        }
+                && this.getYear() == date2.getYear();
         return equal;
     }
 

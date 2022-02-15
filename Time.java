@@ -83,10 +83,7 @@ public class Time
     }
     
     public boolean equals(Time another)
-    {   boolean result = false;
-        if(this.toMinutes() == another.toMinutes())
-        {   result = true;
-        }
+    {   boolean result = this.toMinutes() == another.toMinutes();
         return result;
     }
     
