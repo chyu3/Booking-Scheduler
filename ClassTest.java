@@ -22,19 +22,17 @@ public class ClassTest {
         int noOfStudents = 0;
         char level;
 
-        //teacher input/assign Class level
-        do {
-            level = IBIO.inputChar("Level? ");
-            level = Character.toUpperCase(level);
-            if (level != 'S' || level != 'H') {
-                System.out.print("Error - ");
-            }
-        } while (level != 'S' || level != 'H');
-
-        //teacher inputs/assign grade for the class manually
-
-        //create object
+        //teacher input/assign Class level manually
+        //teacher inputs/assign grade of the class manually
         while (noOfStudents < 25 || stop) {
+            do {
+                level = IBIO.inputChar("Level? (H or S or P ");
+                level = Character.toLowerCase(level);
+                if (level != 's' || level != 'h' || level!= 'p') {
+                    System.out.print("Error - ");
+                }
+            } while (level != 's' || level != 'h' || level!= 'p');
+
             int grade = IBIO.inputInt("Grade (11 or 12)? "); //grade is either 11 or 12
             while (grade < 11 || grade > 12) {
                 grade = IBIO.inputInt("Please re-enter Grade (only 11 or 12): "); //grade is either 11 or 12

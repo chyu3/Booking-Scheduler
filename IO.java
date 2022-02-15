@@ -2,9 +2,15 @@
 
 public class IO extends Appointment{
     Student student;
-    public String ID;
+    public int Duration;
 
+    public int getDuration() {
+        return Duration;
+    }
 
+    public void setDuration(int duration) {
+        Duration = duration;
+    }
 
     public IO(Student student) {
         super(student);

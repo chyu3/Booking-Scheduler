@@ -24,28 +24,31 @@ public class mainMenu {
             case 'k':
                 ClassTest.listClasses(null);
                 break;
-            case 'S':
+            case 's':
                 StudentTest.newStudent();
                 break;
-            case 'U':
+            case 'u':
                 level = IBIO.inputChar("HL or SL or Pre-IB (Enter h, s or p): ");
                 grade = IBIO.inputInt("Grade? (11 or 12): ");
                 index = IBIO.inputInt("class number? < 10: ");
                 StudentTest.editStudent(level, grade, index);
                 break;
-            case 'D':
+            case 'd':
                 classIndex = IBIO.inputInt("Class Index? (1 to 10): ");
                 studentIndex = IBIO.inputInt("Student Number? (11 or 12): ");
 
                 ClassTest.removeStudent(classIndex, studentIndex);
                 break;
-            case 'X':
+            case 'x':
                 studentCode = IBIO.input("Please enter a student ID: ");
                 AppointmentManager.add(studentCode);
                 break;
-            case 'T':
+            case 't':
                 studentCode = IBIO.input("Please enter a student ID: ");
                 AppointmentManager.delete(studentCode);
+                break;
+            default:
+                System.out.println("Invalid Choice");
                 break;
 
         }
@@ -55,7 +58,7 @@ public class mainMenu {
         char level;
         int grade;
         int index;
-        String classCode;  //H1101
+        String classCode;  //H112
         String studentCode; //full ID
         int classIndex;  //1 <= x <= 10
         int studentIndex;  //x > 0
@@ -65,11 +68,14 @@ public class mainMenu {
             switch (decisions) {
                 case 'C':
                     studentCode = IBIO.input("\nEnter a student ID: ");
-                    IOManager.add(null);
+                    IOManager.add(studentCode);
                     break;
                 case 'S':
                     studentCode = IBIO.input("\nEnter a student ID: ");
-                    AppointmentManager.add(null);
+                    AppointmentManager.add(studentCode);
+                    break;
+                default:
+                    System.out.println("Invalid Choice");
                     break;
             }
     }
@@ -102,3 +108,6 @@ public class mainMenu {
         } while (continues);
     }
 }
+
+
+//return to previous step?

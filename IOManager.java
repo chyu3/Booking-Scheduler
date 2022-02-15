@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 
 public class IOManager {
-    ArrayList<IO> io;
+    ArrayList<IO> io = new ArrayList<IO>();
+
     public static void add (String ID){
 
     }

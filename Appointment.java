@@ -5,18 +5,26 @@ public class Appointment extends StudentTest {
     public String ID;
     public int Date;
     public Date Time;
-    public int Duration;
+    public Time appointmentTime;
+    private Date appointmentDate;
 
-    public void Search (int a){
-
-    }
     public Appointment (Student student){
         this.student = student;
     }
 
-    //from student database
-    public void check (){
-        return;
+
+    public void setAppointmentDate(Date appointmentDate){
+        this.appointmentDate = appointmentDate;
+    }
+    public Date getAppointmentDate(){
+        return appointmentDate;
     }
 
+    public Time getAppointmentTime() {
+        return appointmentTime;
+    }
+
+    public void setAppointmentTime(Time appointmentTime) {
+        this.appointmentTime = appointmentTime;
+    }
 }
