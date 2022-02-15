@@ -17,6 +17,8 @@ public class StudentTest {
     //Making a new student to add in arraylist
     public static void newStudent() throws IOException {
         char level = IBIO.inputChar("Enter level ( H for Higher / S for Standard / P for Pre-IB ) : ");
+        level = Character.toUpperCase(level);
+
         while (level != 'H' || level != 'S' || level != 'P') {
             System.out.println("Error");
             level = IBIO.inputChar("Enter Level ( H for Higher / S for Standard / P for Pre-IB ) : ");
@@ -64,24 +66,6 @@ public class StudentTest {
     }
 
 
-    /*public static void delete(ClassCode classCode)
-    {
-        for (int i = 0; i < classes.size(); i++)
-        {
-            Class currentClass = classes.get(i);
-            String currentClassCode = currentClass.getClassCode();
-            if(currentClassCode.equals(classCode))
-            {
-                System.out.println("Searching success! Continue to delete " + currentClassCode);
-                if(confirm() == true)
-                {
-
-                }
-            }
-        }
-     }
-    */
-
     //save to a file
     public static void save() throws IOException {
         System.out.println("<<< Saving data >>>");
@@ -101,7 +85,7 @@ public class StudentTest {
 
     public void check() throws IOException {
         System.out.println("<<< Loading data >>>");
-        File studentFile = new File("student.txt");
+        File studentFile = new File("students.txt");
         if (!studentFile.exists())
         {
             studentFile.createNewFile();

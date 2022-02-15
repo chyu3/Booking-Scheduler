@@ -42,7 +42,8 @@ public class Date
         }
     }
 
-    public Date(String dateString) throws Exception
+
+    public Date(String dateString)
     {
         int d = 0, m = 0, y = 0;
         dateString = dateString.replace('/', ' ');
@@ -64,7 +65,8 @@ public class Date
             year = y;
         } else
         {
-            throw new Exception("Invalid date");
+            //throw new Exception
+            System.out.println("Invalid date");
         }
     }
 
@@ -262,6 +264,7 @@ public class Date
         scanner.close();
         return (isValidYear(y) && isValidMonth(m) && isValidDay(d, m, y));
     }
+
 
     public boolean equals(Date date2)
     {

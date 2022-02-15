@@ -2,7 +2,7 @@
 //defines each student
 
 public class Student {
-    private ClassCode ID;  //7 characters, first 4 index = classCode, last 3 index = number
+    private ClassCode ID;  //7 characters, first 4 index = classCode, last 3 index = student number
     private static int Number=0;
 
     public Student(String classCode, char level, int grade) {

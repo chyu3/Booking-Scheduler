@@ -3,15 +3,12 @@
 public class Appointment extends StudentTest {
     Student student;
     public String ID;
-    public int Date;
-    public Date Time;
     public Time appointmentTime;
     private Date appointmentDate;
 
     public Appointment (Student student){
         this.student = student;
     }
-
 
     public void setAppointmentDate(Date appointmentDate){
         this.appointmentDate = appointmentDate;

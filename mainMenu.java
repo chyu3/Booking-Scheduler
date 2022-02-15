@@ -39,13 +39,21 @@ public class mainMenu {
 
                 ClassTest.removeStudent(classIndex, studentIndex);
                 break;
-            case 'x':
+            case 'z':
                 studentCode = IBIO.input("Please enter a student ID: ");
                 AppointmentManager.add(studentCode);
                 break;
-            case 't':
+            case 'o':
                 studentCode = IBIO.input("Please enter a student ID: ");
                 AppointmentManager.delete(studentCode);
+                break;
+            case 'x':
+                studentCode = IBIO.input("Please enter a student ID: ");
+                IOManager.add(studentCode);
+                break;
+            case 't':
+                studentCode = IBIO.input("Please enter a student ID: ");
+                IOManager.delete(studentCode);
                 break;
             default:
                 System.out.println("Invalid Choice");
@@ -68,12 +76,20 @@ public class mainMenu {
             switch (decisions) {
                 case 'C':
                     studentCode = IBIO.input("\nEnter a student ID: ");
+                    StudentTest.check(studentCode);
                     IOManager.add(studentCode);
                     break;
+
                 case 'S':
                     studentCode = IBIO.input("\nEnter a student ID: ");
+                    StudentTest.check(studentCode);
                     AppointmentManager.add(studentCode);
+                    ClassTest.confirm();
+                    if(ClassTest.confirm() == true){
+                        AppointmentManager.printAllAppointments();
+                    } else return;
                     break;
+
                 default:
                     System.out.println("Invalid Choice");
                     break;

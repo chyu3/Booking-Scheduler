@@ -104,6 +104,23 @@ public class ClassTest {
 
     }
 
+    public static void delete(ClassCode classCode)
+    {
+        for (int i = 0; i < classes.size(); i++)
+        {
+            Class currentClass = classes.get(i);
+            String currentClassCode = currentClass.getClassCode();
+            if(currentClassCode.equals(classCode))
+            {
+                System.out.println("Searching success! Continue to delete " + currentClassCode);
+                if(confirm() == true)
+                {
+
+                }
+            }
+        }
+    }
+
 
     public static int findClass(String classCode) {
         for (int i = 0; i < classes.size(); i++) {
