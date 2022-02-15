@@ -13,6 +13,7 @@ public class mainMenu {
 
         char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform\n");
         decisions = Character.toLowerCase(decisions);
+        System.out.println();
         switch (decisions) {
             case 'c':
                 ClassTest.addClass();
@@ -60,8 +61,7 @@ public class mainMenu {
         int studentIndex;  //x > 0
         char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform\n");
             decisions = Character.toUpperCase(decisions);
-            StudentMenu.main(null);
-
+            System.out.println();
             switch (decisions) {
                 case 'C':
                     studentCode = IBIO.input("\nEnter a student ID: ");
@@ -82,14 +82,22 @@ public class mainMenu {
         do {
             char user = IBIO.inputChar("Are you teacher or student (t/s): ");
             user = Character.toUpperCase(user);
+            System.out.println();
 
-            if(user == 's') {
-                StudentMenu.main(null);
-                student();
-            }
-            if (user == 't'){
-                TeacherMenu.main(null);
-                teacher();
+            switch (user) {
+                case 'S':
+                    StudentMenu.main(null);
+                    student();
+                    break;
+
+                case'T':
+                    TeacherMenu.main(null);
+                    teacher();
+                    break;
+
+                default:
+                    System.out.println("Invalid Choice");
+                    break;
             }
         } while (continues);
     }
