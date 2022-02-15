@@ -82,9 +82,15 @@ public class mainMenu {
         do {
             char user = IBIO.inputChar("Are you teacher or student (t/s): ");
             user = Character.toUpperCase(user);
-            if (user == 't'){ TeacherMenu.main(null); teacher(); }
-            if (user == 's'){ StudentMenu.main(null); student();}
 
+            if(user == 's') {
+                StudentMenu.main(null);
+                student();
+            }
+            if (user == 't'){
+                TeacherMenu.main(null);
+                teacher();
+            }
         } while (continues);
     }
 }
