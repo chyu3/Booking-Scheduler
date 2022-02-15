@@ -90,7 +90,7 @@ public class mainMenu {
                     student();
                     break;
 
-                case'T':
+                case 'T':
                     TeacherMenu.main(null);
                     teacher();
                     break;
