@@ -77,7 +77,7 @@ public class mainMenu {
 
     public static void main(String[] args) throws IOException {
         boolean continues = true;
-        //'if else' loop to distinguish teacher and student access to actions
+        //new switch case for teacher, student options
 
         do {
             char user = IBIO.inputChar("Are you teacher or student (t/s): ");
