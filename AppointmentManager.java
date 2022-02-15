@@ -4,7 +4,7 @@ public class AppointmentManager {
 
     ArrayList<Appointment> appointments;
 
-    //add an appointment
+    //add a general appointment
     public static void add (String ID){
 
     }
@@ -15,9 +15,8 @@ public class AppointmentManager {
     }
 
     public static void main(String[] args) {
+        //2D array (prints scheduler) : after ID and time assigned
 
     }
-
-    //2D array (prints scheduler) : after ID and time assigned
 
 }

@@ -3,24 +3,40 @@ import java.io.IOException;
 public class mainMenu {
     public static void main(String[] args) throws IOException {
         boolean continues = true;
-        do{
+        //'if else' loop to distinguish teacher and student access to actions
+
+        do {
             char level;
-            int grade ;
+            int grade;
             int index;
             String classCode;  //H1101
             String studentCode; //full ID
             int classIndex;  //1 <= x <= 10
             int studentIndex;  //x > 0
 
-            //'if else' loop to distinguish teacher and student access to actions
             char user = IBIO.inputChar("Are you teacher or student (t/s): ");
             user = Character.toUpperCase(user);
 
-            if (user == 't') {
-                char decisions = IBIO.inputChar("Enter the action you want to perform\n");
+            if (user == 's') {
+                StudentMenu.main(null);
+                char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform\n");
                 decisions = Character.toUpperCase(decisions);
-                TeacherMenu.main(null);
+                StudentMenu.main(null);
 
+                switch (decisions) {
+                    case 'C':
+                        studentCode = IBIO.input("\nEnter a student ID: ");
+                        IOManager.add(null);
+                        break;
+                    case 'S':
+                        studentCode = IBIO.input("\nEnter a student ID: ");
+                        AppointmentManager.add(null);
+                        break;
+                }
+            } else {
+                TeacherMenu.main(null);
+                char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform\n");
+                decisions = Character.toLowerCase(decisions);
                 switch (decisions) {
                     case 'c':
                         ClassTest.addClass();
@@ -53,24 +69,9 @@ public class mainMenu {
                     case 'T':
                         studentCode = IBIO.input("Please enter a student ID: ");
                         AppointmentManager.delete(studentCode);
-                }
-            }
-            else {
-                char decisions = IBIO.inputChar("Enter a letter for the action you want to perform\n");
-                decisions = Character.toUpperCase(decisions);
-                StudentMenu.main(null);
-
-                switch (decisions){
-                    case 'C':
-                        studentCode = IBIO.input("Enter a student ID: ");
-                        IOManager.add(null);
                         break;
-                    case 'S':
-                        studentCode = IBIO.input("Enter a student ID: ");
-                        AppointmentManager.add(null);
                 }
             }
-
         } while (continues);
     }
 }

@@ -2,7 +2,7 @@
 
 public class Appointment extends StudentTest {
     Student student;
-    public String ID; //classCode + number
+    public String ID;
     public int Date;
     public Date Time;
     public int Duration;

@@ -176,7 +176,7 @@ public class Date
         return divisibleBy4 && (notDivBy100 || divBy100and400);
     }
 
-    public static int daysinMonth(int month, int year)
+    public static int daysInMonth(int month, int year)
     {
         if (month == 1)
         {
@@ -235,7 +235,7 @@ public class Date
 
     public static boolean isValidDay(int day, int month, int year)
     {
-        return (day >= 1 && day <= daysinMonth(month, year));
+        return (day >= 1 && day <= daysInMonth(month, year));
     }
 
     public static boolean isValidDate(int day, int month, int year)
