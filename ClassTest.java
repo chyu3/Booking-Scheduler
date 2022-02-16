@@ -17,7 +17,7 @@ public class ClassTest {
     // public static ArrayList<Class> classes = new ArrayList<>(); // move to Teacher class
     public static ArrayList<Class> classes = new ArrayList<Class>();
 
-    public static void addClass() {
+    public static void createClass() {
         boolean stop = false;
         int noOfStudents = 0;
         char level;
@@ -26,8 +26,10 @@ public class ClassTest {
         //teacher inputs/assign grade of the class manually
         while (noOfStudents < 25 || stop) {
             do {
-                level = IBIO.inputChar("Level? (H or S or P ");
+                level = IBIO.inputChar("\nLevel? (H or S or P) : ");
                 level = Character.toLowerCase(level);
+                System.out.println();
+
                 if (level != 's' || level != 'h' || level!= 'p') {
                     System.out.print("Error - ");
                 }
@@ -161,7 +163,7 @@ public class ClassTest {
     }
 
     public static void main(String[] args) {
-        addClass();
+        createClass();
     }
 
 }

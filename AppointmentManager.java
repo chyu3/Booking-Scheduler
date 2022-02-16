@@ -39,12 +39,13 @@ public class AppointmentManager {
         }
     }
 
+    //save appointments tp a file
     public static void save() throws IOException {
         System.out.println("<<< Saving data >>>");
         File studentFile = new File("students.txt");
         FileWriter fw = new FileWriter(studentFile);
         PrintWriter out = new PrintWriter(fw);
-        for (Appointment s : appointments)  //save each object(appointment) to a csv file
+        for (Appointment s : appointments)  //load and save each object from appointments arraylist to a csv file
         {
             out.println(s.getAppointmentDate());
             out.println(s.getAppointmentTime());

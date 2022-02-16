@@ -1,8 +1,12 @@
 //Duration is fixed
 
 public class IO extends Appointment{
-    Student student;
+    //Student student;
     public int Duration;
+
+    public IO(String ID, Date appointmentDate, Time appointmentTime) {
+        super(ID, appointmentDate, appointmentTime);
+    }
 
     public int getDuration() {
         return Duration;
@@ -12,7 +16,7 @@ public class IO extends Appointment{
         Duration = duration;
     }
 
-    public IO(Student student) {
+    /*public IO(Student student) {
         super(student);
-    }
+    }*/
 }

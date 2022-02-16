@@ -41,6 +41,8 @@ public class StudentTest {
         save();
     }
 
+
+
     public static int searchByID(String id)
     {
         for (int i = 0; i< students.size(); i++){
@@ -101,15 +103,69 @@ public class StudentTest {
         }*/
     }
 
-    //search and list students by entering the level
-    public static void listStudents(char Level){
+    //Check if the student is in the 'All' students' list and returns true, otherwise false
+    // used to avoid duplicates in a class
+    public static boolean isInList(ClassCode studentID)
+    {
+        boolean found = false;
+        for (Student s : students)
+        {
+            ClassCode currentID = s.getID();
+            if (studentID == currentID)
+            {
+                found = true;
+                break;
+            }
+        }
+        return found;
+    }
+
+    public static void listAllStudents()
+    {
+        for (Student s : students)
+        {
+            System.out.println(s);
+        }
+    }
+
+    //search and list students of the same level by entering the level
+    public static void listStudentsByLevel(char Level){
         char currentStudent;
-        for (Student A: students){
+        for (Student A: students)
+        {
             currentStudent = Character.toUpperCase( A.getLevel() );
-            if ( currentStudent == Character.toUpperCase(Level) ){
+            if ( currentStudent == Character.toUpperCase(Level) )
+            {
                 System.out.println(A);
             }
         }
     }
+
+    //search and list students in the same grade by entering the grade
+    public static void listStudentsByGrade(int grade){
+        int currentStudent;
+        for (Student A: students)
+        {
+            currentStudent = A.getGrade();
+            if ( currentStudent == Character.toUpperCase(grade) )
+            {
+                System.out.println(A);
+            }
+        }
+    }
+
+    public static void listStudentsByIndex(int index){
+        int currentStudent;
+        for (Student A: students)
+        {
+            currentStudent = A.getIndex();
+            if ( currentStudent == Character.toUpperCase(index) )
+            {
+                System.out.println(A);
+            }
+        }
+    }
+
+
 
 }
