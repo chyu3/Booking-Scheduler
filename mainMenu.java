@@ -2,6 +2,11 @@ import java.io.IOException;
 import java.util.*;
 
 public class mainMenu {
+
+    public static void quit(){
+
+    }
+
     public static void teacher() throws IOException {
         char level;
         int grade;
@@ -10,6 +15,8 @@ public class mainMenu {
         String studentCode; //full ID
         int classIndex;  //1 <= x <= 10
         int studentIndex;  //x > 0
+        String date;
+        String time;
 
         char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform\n");
         decisions = Character.toLowerCase(decisions);
@@ -41,18 +48,24 @@ public class mainMenu {
                 break;
             case 'z':
                 studentCode = IBIO.input("Please enter a student ID: ");
-                AppointmentManager.add(studentCode);
+                StudentTest.check(studentCode);
+                date = IBIO.input("\nEnter the date (DD/MM/YYYY):");
+                time = IBIO.input("Please input the starting time;");
+                AppointmentManager.add(studentCode, new Date(date), new Time(time));
                 break;
             case 'o':
                 studentCode = IBIO.input("Please enter a student ID: ");
+                StudentTest.check(studentCode);
                 AppointmentManager.delete(studentCode);
                 break;
             case 'x':
                 studentCode = IBIO.input("Please enter a student ID: ");
+                StudentTest.check(studentCode);
                 IOManager.add(studentCode);
                 break;
             case 't':
                 studentCode = IBIO.input("Please enter a student ID: ");
+                StudentTest.check(studentCode);
                 IOManager.delete(studentCode);
                 break;
             default:
@@ -62,7 +75,7 @@ public class mainMenu {
         }
     }
 
-    public static void student() {
+    public static void student() throws Exception{
         char level;
         int grade;
         int index;
@@ -70,6 +83,9 @@ public class mainMenu {
         String studentCode; //full ID
         int classIndex;  //1 <= x <= 10
         int studentIndex;  //x > 0
+        String date;
+        String time;
+
         char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform\n");
             decisions = Character.toUpperCase(decisions);
             System.out.println();
@@ -82,11 +98,14 @@ public class mainMenu {
 
                 case 'S':
                     studentCode = IBIO.input("\nEnter a student ID: ");
+
                     StudentTest.check(studentCode);
-                    AppointmentManager.add(studentCode);
+                    date = IBIO.input("\nEnter the date (DD/MM/YYYY):");
+                    time = IBIO.input("\n Enter the Starting time (");
+                    AppointmentManager.add(studentCode, new Date(date), new Time(time));
                     ClassTest.confirm();
                     if(ClassTest.confirm() == true){
-                        AppointmentManager.printAllAppointments();
+                        AppointmentManager.listAppointments();
                     } else return;
                     break;
 
@@ -97,9 +116,10 @@ public class mainMenu {
     }
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         boolean continues = true;
         //new switch case for teacher, student options
+        System.out.println("Welcome to the Booking Scheduler!");
 
         do {
             char user = IBIO.inputChar("Are you teacher or student (t/s): ");

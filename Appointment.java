@@ -1,13 +1,20 @@
 //has and stores Day - Time - (hour, minute and second)
 
-public class Appointment extends StudentTest {
-    Student student;
+public class Appointment //extends StudentTest
+{
+    //Student student;
     public String ID;
     public Time appointmentTime;
-    private Date appointmentDate;
+    public Date appointmentDate;
 
-    public Appointment (Student student){
+    /*public Appointment (Student student){
         this.student = student;
+    }*/
+
+    public Appointment(String ID, Date appointmentDate, Time appointmentTime) {
+        this.ID = ID;
+        this.appointmentTime = appointmentTime;
+        this.appointmentDate = appointmentDate;
     }
 
     public void setAppointmentDate(Date appointmentDate){

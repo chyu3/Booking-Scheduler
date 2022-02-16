@@ -69,7 +69,7 @@ public class StudentTest {
     //save to a file
     public static void save() throws IOException {
         System.out.println("<<< Saving data >>>");
-        File studentFile = new File("student.txt");
+        File studentFile = new File("students.txt");
         FileWriter fw = new FileWriter(studentFile);
         PrintWriter out = new PrintWriter(fw);
         for (Student s : students)  //save each element
@@ -83,10 +83,11 @@ public class StudentTest {
         System.out.println("Data file saved."); // optional
     }
 
-    public void check() throws IOException {
+    public static void check(String id) throws IOException {
         System.out.println("<<< Loading data >>>");
         File studentFile = new File("students.txt");
-        if (!studentFile.exists())
+        save();
+        /*if (!studentFile.exists())
         {
             studentFile.createNewFile();
             char add = IBIO.inputChar("Data file not found. Create a Student?");
@@ -97,7 +98,7 @@ public class StudentTest {
                 save();
             }
             else return;
-        }
+        }*/
     }
 
     //search and list students by entering the level

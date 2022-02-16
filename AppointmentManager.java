@@ -1,35 +1,36 @@
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
-public class AppointmentManager extends Appointment {
+
+public class AppointmentManager {
     boolean Continue = true;
 
     public static ArrayList<Appointment> appointments = new ArrayList<Appointment>();
 
-    public AppointmentManager(Student student) {
-        super(student);
-    }
-
     //add a general appointment
-    public static void add(String ID){
-        String date = IBIO.input("Please enter the date (Day/Month/Year):  ");
-        Date object = new Date(date);
-        appointments.add(object.Date(date) + " " + ID);
+    public static void add(String ID, Date date, Time time){
+        //Date object = new Date(date);
+        //date.getDay();
+        Appointment  appt = new Appointment(ID, date, time);
+        appointments.add(appt);
         ClassTest.confirm();
-        if (ClassTest.confirm() == true){
-            printAppointments();
-        }
+        listAppointments();
     }
 
-    //get appointment index from the arraylist
+
     public static void delete (String ID){
-        ID = Student.getID();
+
         for (int i = 0; i < appointments.size(); i++)
         {
-            Appointment currentAppointment = appointments.get(i);
+            Appointment currentAppointment = appointments.get(i); //get appointment index from the arraylist
             String currentAppointmentNumber = currentAppointment.ID;
             if(currentAppointmentNumber.equals(ID))
             {
-                System.out.println("Searching success! Continue to delete " + currentAppointmentNumber);
+                System.out.println("Searching success! Continue to delete " + ID);
+                ClassTest.confirm();
                 if(ClassTest.confirm() == true)
                 {
 
@@ -38,14 +39,36 @@ public class AppointmentManager extends Appointment {
         }
     }
 
-    public Appointment printAllAppointments(){
-        boolean a = true;
+    public static void save() throws IOException {
+        System.out.println("<<< Saving data >>>");
+        File studentFile = new File("students.txt");
+        FileWriter fw = new FileWriter(studentFile);
+        PrintWriter out = new PrintWriter(fw);
+        for (Appointment s : appointments)  //save each object(appointment) to a csv file
+        {
+            out.println(s.getAppointmentDate());
+            out.println(s.getAppointmentTime());
+        }
+        out.close();
+        System.out.println("Data file saved.");
+    }
+
+    public static void listAppointments(){
+
+        for (Appointment s : appointments)
+        {
+            System.out.println(s + "\n");
+        }
+
+        /*boolean a = true;
         do{
             for (int i = 0; i < appointments.size(); i++){
                 return appointments.get(i);
             }
         } while (a = true);
         return null;
+
+        */
     }
 
     public static void main(String[] args) {

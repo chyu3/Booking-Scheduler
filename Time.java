@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Time
 {
     private int hours;
@@ -17,7 +19,29 @@ public class Time
     {   this.setHours(h);
         this.setMinutes(m);
     }
-    
+
+    public Time(String time)
+    {
+        int h = 0, m = 0;
+        time = time.replace(':', ' ');
+        Scanner scanner = new Scanner(time);
+        try
+        {
+            //convert everything to positive
+            h = Math.abs( scanner.nextInt());
+            m = Math.abs(scanner.nextInt());
+            scanner.close();
+        } catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        if (h > 23 || m > 59)
+        {
+            //throw new Exception
+            System.out.println("Invalid date");
+        }
+    }
+
     public int getHours()
     {   return this.hours;
     }
