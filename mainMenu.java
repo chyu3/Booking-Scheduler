@@ -4,9 +4,11 @@ public class mainMenu {
 
     public static void instructions(){
         System.out.println(
-                "\tRules:" +
-                        "\t! Make sure a class is created before creating a student " +
-                        "\t!  "
+                "\n\tRules:\n" +
+                        "\t! Make sure a class is created before creating a student \n" +
+                        "\t! Date input must follow the format: DD/MM/YYYY \n" +
+                        "\t! " +
+                "\n\tInstructions:\n"
         );
     }
     public static void quit(boolean c){
