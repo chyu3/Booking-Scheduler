@@ -4,7 +4,9 @@ public class IO extends Appointment{
     //Student student;
     public int Duration;
 
-    public IO(String ID, Date appointmentDate, Time appointmentTime) {
+    public IO(String ID,
+              Date appointmentDate,
+              Time appointmentTime) {
         super(ID, appointmentDate, appointmentTime);
     }
 

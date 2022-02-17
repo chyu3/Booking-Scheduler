@@ -4,7 +4,7 @@ public class ClassCode {
     //ClassCode parameters
     private final char Level;
     private final int Grade;
-    public int Index; //class number
+    private int Index; //class number
     private int Number; //student's number or counter
 
     public ClassCode(char level, int grade, int index) {
