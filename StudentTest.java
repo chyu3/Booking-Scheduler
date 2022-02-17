@@ -4,10 +4,7 @@ delete student
 edit student
 */
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.*;
 
 //add student, edit student
@@ -102,6 +99,41 @@ public class StudentTest {
             else return;
         }*/
     }
+
+    public static void load() throws IOException
+    {
+        System.out.println("<<< Loading data >>>");
+        File studentFile = new File("student.csv");
+        if (!studentFile.exists())      // no data file? create one and have user input data
+        {
+            studentFile.createNewFile();
+            System.out.println("Data file not found. Creating one.");
+            newStudent();
+        }
+        FileReader fr = new FileReader(studentFile);
+        BufferedReader in = new BufferedReader(fr);//read mode
+        char newLevel= 0;
+        int newGrade = 0;
+        int newIndex = 0;
+        int newNumber = 0;
+        String temp;
+        students.clear();
+        in.readLine(); // read the header (field/attribute names for CSV)-we discard them as we don't need them here
+        while (in.ready())// read lines while file has content
+        {
+            temp = in.readLine();
+            String[] record = temp.split(",");
+            newLevel = record[0].charAt(0);
+            newGrade = Integer.parseInt(record[1]);
+            newIndex = Integer.parseInt(record[2]);
+            newNumber = Integer.parseInt(record[3]);
+            Student newStudent = new Student(newLevel, newGrade, newIndex, newNumber);
+            students.add(newStudent);
+        }
+        in.close();
+        System.out.println("Data file loaded.");// optional
+    }
+
 
     //Check if the student is in the 'All' students' list and returns true, otherwise false
     // used to avoid duplicates in a class
