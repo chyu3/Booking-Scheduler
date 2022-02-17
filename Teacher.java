@@ -6,7 +6,7 @@ public class Teacher {
     //number of classes the teacher has
     public int getClasses(){return Class.size();}
 
-
-    public static void main(String[] args) {
+    public String toString() {
+        return Class.toString();
     }
 }

@@ -16,22 +16,21 @@ public class ClassTest {
     public static ArrayList<Class> classes = new ArrayList<Class>();
 
     public static void createClass() {
-        boolean stop = false;
         int noOfStudents = 0;
         char level;
 
         //teacher input/assign Class level manually
         //teacher inputs/assign grade of the class manually
-        while (noOfStudents < 25 || stop) {
+        while (noOfStudents < 25) {
             do {
                 level = IBIO.inputChar("\nLevel? (H or S or P) : ");
                 level = Character.toLowerCase(level);
                 System.out.println();
 
-                if (level != 's' || level != 'h' || level!= 'p') {
+                if (level != 's' && level != 'h' && level!= 'p') {
                     System.out.print("Error - ");
                 }
-            } while (level != 's' || level != 'h' || level!= 'p');
+            } while (level != 's' && level != 'h' && level!= 'p');
 
             int grade = IBIO.inputInt("Grade (11 or 12)? "); //grade is either 11 or 12
             while (grade < 11 || grade > 12) {
@@ -42,21 +41,27 @@ public class ClassTest {
             int index = IBIO.inputInt("What is the index of this  class? (index<10): ");
             Student newStudent = new Student(level, grade, index);
 
-            System.out.println(newStudent);
-
             newClass.students.add(newStudent);
+            noOfStudents++;
+            System.out.println(newStudent + " added");
+
             char more = IBIO.inputChar("add another student (y/n)? ");
 
             //newStudent is inside students' arraylist which is in the Class
             if (more == 'N' || more == 'n' || noOfStudents > 25)
-                stop = true;
-            while (noOfStudents < 25) {
+            {
+                break;
+            }
+            classes.add(newClass);
+            System.out.println("Class added:\n" + newClass.toString());
+            /*while (noOfStudents < 25) {
                 if (more == 'N' || more == 'n')
                     stop = true;
-            }
+            }*/
         }
     }
 
+    // THIS ISN'T DOING ANYTHING, SAFE TO REMOVE, teacher can use delete and add student instead
     public static void editClass() {
         //ArrayList<Class> temp = new ArrayList<>(); // <- TeacherTest?
         // input class code
@@ -64,7 +69,7 @@ public class ClassTest {
 
         boolean stop = false;
         int noOfStudents = 0;
-        while (noOfStudents < 25 || stop) {
+        while (!stop || noOfStudents < 25) {
             // teacher inputs student data + validate input
             char level;
             do {
@@ -77,7 +82,10 @@ public class ClassTest {
 
             char more = IBIO.inputChar("add another student (y/n)? ");
             if (more == 'N' || more == 'n' || noOfStudents > 25)
+            {
                 stop = true;
+
+            }
         }
     }
 
@@ -112,8 +120,7 @@ public class ClassTest {
                 System.out.println("Searching success! Continue to delete " + currentClassCode);
                 if(confirm() == true)
                 {
-
-
+                    classes.remove(classCode);
                 }
             }
         }
@@ -157,6 +164,8 @@ public class ClassTest {
             }
         }
     }
+
+
 
     public static void main(String[] args) {
         createClass();
