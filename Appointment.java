@@ -1,12 +1,12 @@
-//has and stores Day - Time - (hour, minute and second)
+//has and stores Date (DD/MM/YYYY) - Time - (hour, minute and second)
 
-public class Appointment //extends StudentTest
+public class Appointment //uses StudentTest
 {
-    //Student student;
     public String ID;
     public Time appointmentTime;
     public Date appointmentDate;
 
+    //Student student;
     /*public Appointment (Student student){
         this.student = student;
     }*/
@@ -27,7 +27,6 @@ public class Appointment //extends StudentTest
     public Time getAppointmentTime() {
         return appointmentTime;
     }
-
     public void setAppointmentTime(Time appointmentTime) {
         this.appointmentTime = appointmentTime;
     }

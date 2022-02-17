@@ -25,27 +25,48 @@ public class Class {
     public Class(char level, int grade) {
     }
 
-    public int getClassSize()
-    {
-        return students.size();
-    }
-
     public String toString()
     {
         return "Class code: " + getClassCode();
     }
 
-    public String getClassCode() { return ClassCode; }
+    public String getClassCode() {
+        return ClassCode;
+    }
+
+    public void setClassCode(String classCode) {
+        ClassCode = classCode;
+    }
 
     public char getClassLevel() {
         return ClassLevel;
+    }
+
+    public void setClassLevel(char classLevel) {
+        ClassLevel = classLevel;
     }
 
     public int getClassGrade() {
         return ClassGrade;
     }
 
+    public void setClassGrade(int classGrade) {
+        ClassGrade = classGrade;
+    }
+
     public int getClassIndex() {
         return ClassIndex;
+    }
+
+    public void setClassIndex(int classIndex) {
+        ClassIndex = classIndex;
+    }
+
+    public Teacher getClassSize() {
+        return classSize;
+    }
+
+    public void setClassSize(Teacher classSize) {
+        this.classSize = classSize;
     }
 }

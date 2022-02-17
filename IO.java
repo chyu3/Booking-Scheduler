@@ -1,9 +1,9 @@
 //Duration is fixed
 
 public class IO extends Appointment{
-    //Student student;
     public int Duration;
 
+    //Student student;
     public IO(String ID,
               Date appointmentDate,
               Time appointmentTime) {
@@ -15,7 +15,8 @@ public class IO extends Appointment{
     }
 
     public void setDuration(int duration) {
-        Duration = duration;
+        duration = 20;
+        this.Duration = duration;
     }
 
     /*public IO(Student student) {

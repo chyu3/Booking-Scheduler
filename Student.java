@@ -5,10 +5,6 @@ public class Student {
     private ClassCode ID;  //7 characters, first 4 index = classCode, last 3 index = student number
     private static int Number=0;
 
-    public Student(String classCode, char level, int grade) {
-    }
-    //overloads above method, for existing student ID
-
 
     public ClassCode getID() {
         return ID;
@@ -18,6 +14,14 @@ public class Student {
         this.ID = ID;
     }
 
+    public Student(ClassCode ID) {
+        this.ID = ID;
+    }
+
+    /*public Student(String classCode, char level, int grade) {
+    }*/
+
+    //overloads above method, for existing student ID
     public Student(char level, int grade, int index) {
         //super();
         Number++;
