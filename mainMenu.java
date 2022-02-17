@@ -7,7 +7,7 @@ public class mainMenu {
                 "\n\tRules:\n" +
                         "\t! Make sure a class is created before creating a student \n" +
                         "\t! Date input must follow the format: DD/MM/YYYY \n" +
-                        "\t! " +
+                        "\t! Time input" +
                 "\n\tInstructions:\n"
         );
     }

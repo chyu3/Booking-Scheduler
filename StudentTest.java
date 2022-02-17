@@ -10,8 +10,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.*;
 
-public class StudentTest {
+//add student, edit student
 
+public class StudentTest {
+    //Arraylist of All students
     public static ArrayList<Student> students = new ArrayList<Student>();
 
     //Making a new student to add in arraylist
@@ -40,8 +42,6 @@ public class StudentTest {
         //save to a file
         save();
     }
-
-
 
     public static int searchByID(String id)
     {

@@ -9,11 +9,9 @@ edit class
 //ArrayList<Class> temp = new ArrayList<>(); // <- TeacherTest?
 
 //----------------------------------
-//add student, delete student, edit student
-
+//stores/manages one class at a time
 
 public class ClassTest {
-    //stores/manages one class at a time
     // public static ArrayList<Class> classes = new ArrayList<>(); // move to Teacher class
     public static ArrayList<Class> classes = new ArrayList<Class>();
 
@@ -102,11 +100,8 @@ public class ClassTest {
         return (temp == 'y');
     }
 
-    public static void load() {
-
-    }
-
-    public static void delete(ClassCode classCode)
+    //empty all objects in a class by the given class code
+    public static void emptyClass(ClassCode classCode)
     {
         for (int i = 0; i < classes.size(); i++)
         {
@@ -118,11 +113,11 @@ public class ClassTest {
                 if(confirm() == true)
                 {
 
+
                 }
             }
         }
     }
-
 
     public static int findClass(String classCode) {
         for (int i = 0; i < classes.size(); i++) {
@@ -140,6 +135,7 @@ public class ClassTest {
         return -1;
     }
 
+    //removes student from one class, but the student object stays in the students list
     public static void removeStudent(int classIndex, int studentIndex) {
         System.out.println("Removing " + classes.get(classIndex).students.get(studentIndex).getID() + "from " +
                 classes.get(classIndex).getClassCode());
