@@ -1,9 +1,12 @@
 import java.util.*;
 
-//teacher will input the classes
-//teacher manager (to manage the class arraylist)
-
+//further Development
 public class TeacherTest {
+    //Teacher objects in an array list
+
+    public static void add(){
+
+    }
 
     public static void delete(){
 
@@ -16,4 +19,5 @@ public class TeacherTest {
     }
 
     //list all teachers
+
 }

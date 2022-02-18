@@ -17,16 +17,17 @@ public class StudentTest {
     public static void newStudent() throws IOException {
         char level = IBIO.inputChar("Enter level ( H for Higher / S for Standard / P for Pre-IB ) : ");
         level = Character.toUpperCase(level);
-
         while (level != 'H' || level != 'S' || level != 'P') {
             System.out.println("Error");
             level = IBIO.inputChar("Enter Level ( H for Higher / S for Standard / P for Pre-IB ) : ");
         }
+
         int grade = IBIO.inputInt("Enter Grade  : ");
         while (grade != 11 || grade != 12) // arbitrary number, depends on requirements
         {
             grade = IBIO.inputInt("Enter '11' or '12': ");
         }
+
         int index = IBIO.inputInt("Enter the class number : ");
         while (index <= 0 || grade >= 11)
         {
@@ -86,7 +87,7 @@ public class StudentTest {
         System.out.println("<<< Loading data >>>");
         File studentFile = new File("students.txt");
         save();
-        /*if (!studentFile.exists())
+        if (!studentFile.exists())
         {
             studentFile.createNewFile();
             char add = IBIO.inputChar("Data file not found. Create a Student?");
@@ -97,7 +98,7 @@ public class StudentTest {
                 save();
             }
             else return;
-        }*/
+        }
     }
 
     public static void load() throws IOException
@@ -106,6 +107,7 @@ public class StudentTest {
         File studentFile = new File("student.csv");
         if (!studentFile.exists())      // no data file? create one and have user input data
         {
+            //noinspection ResultOfMethodCallIgnored
             studentFile.createNewFile();
             System.out.println("Data file not found. Creating one.");
             newStudent();

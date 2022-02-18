@@ -12,7 +12,7 @@ edit class
 //stores/manages one class at a time
 
 public class ClassTest {
-    // public static ArrayList<Class> classes = new ArrayList<>(); // move to Teacher class
+    //Array List of all classes
     public static ArrayList<Class> classes = new ArrayList<Class>();
 
     public static void createClass() {

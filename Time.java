@@ -102,12 +102,14 @@ public class Time
 
     public Time add(Time another)
     {   int totalMinutes = this.toMinutes() + another.toMinutes();
-        Time result = new Time(totalMinutes);
+        Time result;
+        result = new Time(totalMinutes);
         return result;
     }
     
     public boolean equals(Time another)
-    {   boolean result = this.toMinutes() == another.toMinutes();
+    {   boolean result;
+        result = this.toMinutes() == another.toMinutes();
         return result;
     }
     

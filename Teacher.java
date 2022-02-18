@@ -1,10 +1,10 @@
 import java.util.*;
 
+//further development
 public class Teacher {
-    ArrayList<Class> Class = new ArrayList<>(); //for multiple teachers
+    ArrayList<Teacher> Teachers = new ArrayList<>(); //for multiple teachers
 
-    //number of classes the teacher has
-    public int getClasses(){return Class.size();}
+    public int getTeachers(){return Teachers.size();}
 
 
     public static void main(String[] args) {

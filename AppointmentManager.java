@@ -6,8 +6,6 @@ import java.util.*;
 
 
 public class AppointmentManager {
-    boolean Continue = true;
-
     public static ArrayList<Appointment> appointments = new ArrayList<Appointment>();
 
     //add a general appointment
