@@ -2,6 +2,7 @@ import java.io.IOException;
 
 public class StudentMenu {
     public static void student() throws Exception {
+        main(null);
         boolean continues = true;
         char level;
         int grade;
@@ -13,17 +14,16 @@ public class StudentMenu {
         String date;
         String time;
         do{
+            StudentMenu.main(null);
             char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform: ");
             decisions = Character.toUpperCase(decisions);
             System.out.println();
             switch (decisions) {
                 case 'A':
-                    addTable();
                     add();
                     break;
 
                 case 'D':
-                    deleteTable();
                     delete();
                     break;
 
@@ -32,7 +32,7 @@ public class StudentMenu {
                     System.out.println("returning to Main Menu...");
                     System.out.println("\t⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇");
                     mainMenu.main(null);
-                    break;
+
 
                 default:
                     System.out.println("Invalid Choice");
@@ -49,9 +49,9 @@ public class StudentMenu {
         System.out.println("|\t           ⬇                        ⬇         ");
         System.out.println("|\t           G                         O          ");
         System.out.println("|\t_______________________________________________");
-        System.out.println("|\t             Return to previous step ");
-        System.out.println("|\t                        ⬇");
-        System.out.println("|\t                        B ");
+        System.out.println("|\t             Return to Student Menu               ");
+        System.out.println("|\t                      ⬇");
+        System.out.println("|\t                      B ");
     }
 
     public static void add() throws IOException {
@@ -66,17 +66,13 @@ public class StudentMenu {
         String date;
         String time;
         do {
+            addTable();
             char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform: ");
             decisions = Character.toLowerCase(decisions);
             System.out.println();
 
             switch (decisions) {
                 case 'g':
-                    studentCode = IBIO.input("\nEnter a student ID: ");
-                    StudentTest.check(studentCode);
-                    IOManager.add(studentCode);
-                    break;
-                case 'o':
                     studentCode = IBIO.input("\nEnter a student ID: ");
                     StudentTest.check(studentCode);
                     date = IBIO.input("\nEnter the date (DD/MM/YYYY): ");
@@ -86,6 +82,11 @@ public class StudentMenu {
                     if (ClassTest.confirm() == true) {
                         AppointmentManager.listAppointments();
                     } else return;
+                    break;
+                case 'o':
+                    studentCode = IBIO.input("\nEnter a student ID: ");
+                    StudentTest.check(studentCode);
+                    IOManager.add(studentCode);
                     break;
                 case 'b':
                     continues = false;
@@ -125,6 +126,7 @@ public class StudentMenu {
         String date;
         String time;
         do {
+            deleteTable();
             char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform: ");
             decisions = Character.toLowerCase(decisions);
             System.out.println();
@@ -164,9 +166,9 @@ public class StudentMenu {
         System.out.println("|      ⬇           ⬇        |");
         System.out.println("|      A            D        |");
         System.out.println("|____________________________|");
-        System.out.println("| Return to previous step    |");
-        System.out.println("|            ⬇                ");
-        System.out.println("|            B                ");
+        System.out.println("|     Return to Main Menu    |");
+        System.out.println("|             ⬇              |    ");
+        System.out.println("|             B              |");
 
     }
 }

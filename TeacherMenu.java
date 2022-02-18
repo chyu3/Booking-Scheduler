@@ -6,26 +6,22 @@ public class TeacherMenu {
 
     public static void teacher() throws Exception {
         boolean continues = true;
-
         do {
+            main(null);
             char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform: ");
             decisions = Character.toLowerCase(decisions);
             System.out.println();
             switch (decisions) {
                 case 'c':
-                    managementTable();
                     management();
                     break;
                 case 'a':
-                    addTable();
                     add();
                     break;
                 case 'd':
-                    deleteTable();
                     delete();
                     break;
                 case 'v':
-                    viewTable();
                     view();
                     break;
 
@@ -34,7 +30,6 @@ public class TeacherMenu {
                     System.out.println("returning to Main Menu...");
                     System.out.println("\t⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇");
                     mainMenu.main(null);
-                    break;
                 default:
                     System.out.println("Invalid Choice");
                     break;
@@ -44,15 +39,15 @@ public class TeacherMenu {
 
     public static void managementTable(){
         System.out.println("+---==-******************-==---+");
-        System.out.println("|      *  " + "Management" + "  *      |");
-        System.out.println("|_______________________________");
+        System.out.println("|      *  " + "Management" + "  *        |");
+        System.out.println("|_____________________________________");
         System.out.println("|\tedit a class  |  edit a student |");
-        System.out.println("|       ⬇                ⬇        ");
-        System.out.println("|       C                 s        ");
-        System.out.println("|_______________________________");
+        System.out.println("|        ⬇                ⬇        ");
+        System.out.println("|        C                 s        ");
+        System.out.println("|_____________________________________");
         System.out.println("|\tReturn to Teacher Menu ");
-        System.out.println("|           ⬇");
-        System.out.println("|           B ");
+        System.out.println("|            ⬇");
+        System.out.println("|            B ");
     }
 
     public static void management() throws Exception {
@@ -67,6 +62,7 @@ public class TeacherMenu {
         String date;
         String time;
         do {
+            managementTable();
             char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform: ");
             decisions = Character.toLowerCase(decisions);
             System.out.println();
@@ -96,15 +92,15 @@ public class TeacherMenu {
 
     public static void addTable(){
         System.out.println("+\t--------------------------==-******************-==--------------------------------+");
-        System.out.println("|\t                            *  " + "Add" + "  *                                    ");
+        System.out.println("|\t                                *  " + "Add" + "  *                                    ");
         System.out.println("|\t___________________________________________________________________________________");
         System.out.println("|\tCreate class  |  Create student  |  New General appointment | New Oral appointment");
         System.out.println("|\t      ⬇               ⬇                       ⬇                       ⬇");
         System.out.println("|\t      C                W                       E                        R");
         System.out.println("|\t___________________________________________________________________________________");
-        System.out.println("|\t                        Return to previous step ");
-        System.out.println("|\t                                    ⬇");
-        System.out.println("|\t                                    B ");
+        System.out.println("|\t                        Return to Teacher Menu ");
+        System.out.println("|\t                                   ⬇");
+        System.out.println("|\t                                   B ");
     }
 
     public static void add() throws IOException {
@@ -119,6 +115,7 @@ public class TeacherMenu {
         String date;
         String time;
         do {
+            addTable();
             char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform: ");
             decisions = Character.toLowerCase(decisions);
             System.out.println();
@@ -157,15 +154,15 @@ public class TeacherMenu {
 
     public static void deleteTable(){
         System.out.println("+\t-----------------==-******************-==------------------+");
-        System.out.println("|\t                    *  " + "Delete" + "  *                ");
+        System.out.println("|\t                       *  " + "Delete" + "  *                ");
         System.out.println("|\t__________________________________________________________________________________");
         System.out.println("|\tdelete student from a class | delete General Appointment | delete Oral Appointment");
         System.out.println("|\t             ⬇                          ⬇                          ⬇ ");
         System.out.println("|\t             Q                           W                          E ");
         System.out.println("|\t__________________________________________________________________________________");
-        System.out.println("|\t                  Return to previous step ");
-        System.out.println("|\t                             ⬇");
-        System.out.println("|\t                             B ");
+        System.out.println("|\t                            Return to Teacher Menu ");
+        System.out.println("|\t                                        ⬇");
+        System.out.println("|\t                                        B ");
     }
 
     public static void delete() throws IOException {
@@ -180,6 +177,7 @@ public class TeacherMenu {
         String date;
         String time;
         do {
+            deleteTable();
             char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform: ");
             decisions = Character.toLowerCase(decisions);
             System.out.println();
@@ -219,23 +217,23 @@ public class TeacherMenu {
 
     public static void viewTable(){
         System.out.println("+\t---------------==-******************-==----------------+");
-        System.out.println("|\t               *  " + "View" + "  *                ");
+        System.out.println("|\t                    *  " + "View" + "  *                ");
         System.out.println("|\t____________________________________________________");
         System.out.println("|\tView general appointments  |  View oral appointments");
         System.out.println("|\t           ⬇                            ⬇    ");
         System.out.println("|\t           Q                             W    ");
-        System.out.println("|\t===========================================================================================================");
+        System.out.println("|\t=============================================================================================================");
         System.out.println("|\tList All students | List Students by Level | List students by Grade | List students in a Class by class code");
         System.out.println("|\t         ⬇                    ⬇                          ⬇                       ⬇");
         System.out.println("|\t         A                     S                          D                        F");
         System.out.println("|\t_______________________________________________________");
-        System.out.println("|\tList All classes ");
-        System.out.println("|\t         ⬇      ");
-        System.out.println("|\t         Z     ");
+        System.out.println("|\t                   List All classes ");
+        System.out.println("|\t                          ⬇      ");
+        System.out.println("|\t                          Z     ");
         System.out.println("|\t_______________________________________________________");
-        System.out.println("|\t                Return to previous step ");
-        System.out.println("|\t                            ⬇");
-        System.out.println("|\t                            B ");
+        System.out.println("|\t                Return to Teacher Menu ");
+        System.out.println("|\t                           ⬇");
+        System.out.println("|\t                           B ");
     }
 
     public static void view(){
@@ -250,6 +248,7 @@ public class TeacherMenu {
         String date;
         String time;
         do {
+            viewTable();
             char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform: ");
             decisions = Character.toLowerCase(decisions);
             System.out.println();
@@ -295,16 +294,16 @@ public class TeacherMenu {
 
     public static void main(String[] args) {
         //continue from main menu
-        System.out.println("+------------==-******************-==---------------+");
-        System.out.println("|\t           *  " + "Teacher Menu" + "  *                ");
+        System.out.println("+-------------==-******************-==--------------+");
+        System.out.println("|\t             *  " + "Teacher Menu" + "  *                ");
         System.out.println("|___________________________________________________|");
         System.out.println("|\t    Management  |  Add  |  Delete  |  View");
         System.out.println("|           ⬇          ⬇        ⬇        ⬇");
         System.out.println("|           C           A        D         V ");
         System.out.println("|___________________________________________________|");
         System.out.println("|\t             Return to Main Menu                    ");
-        System.out.println("|                       ⬇                             ");
-        System.out.println("|                       B                             ");
+        System.out.println("|                        ⬇                             ");
+        System.out.println("|                        B                             ");
 
     }
 }

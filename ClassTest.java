@@ -39,6 +39,9 @@ public class ClassTest {
 
             Class newClass = new Class(level, grade);
             int index = IBIO.inputInt("What is the index of this  class? (index<10): ");
+            while (index < 0 && index >= 10 ){
+                index = IBIO.inputInt("Please re-enter index (index<10): ");
+            }
             Student newStudent = new Student(level, grade, index);
 
             //adding students after a class is created

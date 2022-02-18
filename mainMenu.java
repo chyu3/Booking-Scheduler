@@ -10,8 +10,8 @@ public class mainMenu {
                         "\t! Time input must follow the format: 00:00 \n" +
                         "" +
                 "\n\tInstructions:\n" +
-                        "At least one class have to exist, if a student want to be added to a class!" +
-                        ""
+                        "\tAt least one class have to exist, if a student want to be added to a class!" +
+                        "\t"
         );
     }
 
@@ -50,21 +50,19 @@ public class mainMenu {
 
             switch (user) {
                 case 's':
-                    StudentMenu.main(null);
                     StudentMenu.student();
                     break;
 
                 case 't':
-                    TeacherMenu.main(null);
                     TeacherMenu.teacher();
                     break;
 
                 case 'q':
                     instructions();
+                    break;
 
                 default:
                     System.out.println("Invalid Choice");
-                    main(null);  //recursive call
                     break;
             }
         } while (continues);
