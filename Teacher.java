@@ -6,7 +6,7 @@ public class Teacher {
 
     public int getTeachers(){return Teachers.size();}
 
-    public String toString() {
+    /*public String toString() {
         return Class.toString();
-    }
+    }*/
 }
