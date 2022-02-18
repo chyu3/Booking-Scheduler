@@ -6,15 +6,6 @@ public class TeacherMenu {
 
     public static void teacher() throws Exception {
         boolean continues = true;
-        char level;
-        int grade;
-        int index;
-        String classCode;  //H1101
-        String studentCode; //full ID
-        int classIndex;  //1 <= x <= 10
-        int studentIndex;  //x > 0
-        String date;
-        String time;
 
         do {
             char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform: ");
@@ -90,41 +81,30 @@ public class TeacherMenu {
                     index = IBIO.inputInt("class number? < 10: ");
                     StudentTest.editStudent(level, grade, index);
                     break;
+                case 'b':
+                    continues = false;
+                    System.out.println("returning to Teacher Menu...");
+                    System.out.println("\t⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇");
+                    TeacherMenu.main(null);
+                    break;
+                default:
+                    System.out.println("Invalid Choice");
+                    break;
             }
         } while (continues);
     }
 
     public static void addTable(){
-        System.out.println("+---------------==-******************-==----------------+");
-        System.out.println("|               *  " + "Management" + "  *                |");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tCreate class  |  edit class  |  view class");
-        System.out.println("|        ⬇              ⬇              ⬇");
-        System.out.println("|        C               E              K ");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tCreate student | edit student | delete student ");
-        System.out.println("|         ⬇             ⬇              ⬇");
-        System.out.println("|         S              U              D ");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tNew Oral appointment | Delete Oral appointment ");
-        System.out.println("|              ⬇                     ⬇");
-        System.out.println("|              X                      T ");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tNew General appointment | Delete General appointment ");
-        System.out.println("|              ⬇                         ⬇");
-        System.out.println("|              Z                          O ");
-        System.out.println("|================================================================================================");
-        System.out.println("|\tList All students | List Students by Level | List students by Grade | List students in a Class");
-        System.out.println("|         ⬇                    ⬇                          ⬇                       ⬇");
-        System.out.println("|         1                     2                          3                        4");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tList All classes | List One class ");
-        System.out.println("|         ⬇                 ⬇");
-        System.out.println("|         5                  6 ");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|                Return to previous step ");
-        System.out.println("|                            ⬇");
-        System.out.println("|                            B ");
+        System.out.println("+\t--------------------------==-******************-==--------------------------------+");
+        System.out.println("|\t                            *  " + "Add" + "  *                                    ");
+        System.out.println("|\t___________________________________________________________________________________");
+        System.out.println("|\tCreate class  |  Create student  |  New General appointment | New Oral appointment");
+        System.out.println("|\t      ⬇               ⬇                       ⬇                       ⬇");
+        System.out.println("|\t      C                W                       E                        R");
+        System.out.println("|\t___________________________________________________________________________________");
+        System.out.println("|\t                        Return to previous step ");
+        System.out.println("|\t                                    ⬇");
+        System.out.println("|\t                                    B ");
     }
 
     public static void add() throws IOException {
@@ -147,56 +127,24 @@ public class TeacherMenu {
                 case 'c':
                     ClassTest.createClass();
                     break;
-                case 'e':
-                    ClassTest.editClass();
-                    break;
-                case 'k':
-                    ClassTest.listClasses(null);
-                    break;
-                case 's':
+                case 'w':
                     StudentTest.newStudent();
                     break;
-                case 'u':
-                    level = IBIO.inputChar("HL or SL or Pre-IB (Enter h, s or p): ");
-                    grade = IBIO.inputInt("Grade? (11 or 12): ");
-                    index = IBIO.inputInt("class number? < 10: ");
-                    StudentTest.editStudent(level, grade, index);
-                    break;
-                case 'd':
-                    classIndex = IBIO.inputInt("Class Index? (1 to 10): ");
-                    studentIndex = IBIO.inputInt("Student Number? (11 or 12): ");
-                    ClassTest.removeStudent(classIndex, studentIndex);
-                    break;
-                case 'z':
+                case 'e':
                     studentCode = IBIO.input("Please enter a student ID: ");
                     StudentTest.check(studentCode);
                     date = IBIO.input("\nEnter the date (DD/MM/YYYY): ");
                     time = IBIO.input("Please input the starting time: ");
                     AppointmentManager.add(studentCode, new Date(date), new Time(time));
                     break;
-                case 'o':
-                    studentCode = IBIO.input("Please enter a student ID: ");
-                    StudentTest.check(studentCode);
-                    AppointmentManager.delete(studentCode);
-                    break;
-                case 'x':
+                case 'r':
                     studentCode = IBIO.input("Please enter a student ID: ");
                     StudentTest.check(studentCode);
                     IOManager.add(studentCode);
                     break;
-                case 't':
-                    studentCode = IBIO.input("Please enter a student ID: ");
-                    StudentTest.check(studentCode);
-                    IOManager.delete(studentCode);
-                    break;
-                case '1':
-                    StudentTest.listAllStudents();
-                    break;
-                case '2':
-
                 case 'b':
                     continues = false;
-                    System.out.println("returning to Main Menu...");
+                    System.out.println("returning to Teacher Menu...");
                     System.out.println("\t⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇");
                     TeacherMenu.main(null);
                     break;
@@ -208,91 +156,155 @@ public class TeacherMenu {
     }
 
     public static void deleteTable(){
-        System.out.println("+---------------==-******************-==----------------+");
-        System.out.println("|               *  " + "Management" + "  *                |");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tCreate class  |  edit class  |  view class");
-        System.out.println("|        ⬇              ⬇              ⬇");
-        System.out.println("|        C               E              K ");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tCreate student | edit student | delete student ");
-        System.out.println("|         ⬇             ⬇              ⬇");
-        System.out.println("|         S              U              D ");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tNew Oral appointment | Delete Oral appointment ");
-        System.out.println("|              ⬇                     ⬇");
-        System.out.println("|              X                      T ");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tNew General appointment | Delete General appointment ");
-        System.out.println("|              ⬇                         ⬇");
-        System.out.println("|              Z                          O ");
-        System.out.println("|================================================================================================");
-        System.out.println("|\tList All students | List Students by Level | List students by Grade | List students in a Class");
-        System.out.println("|         ⬇                    ⬇                          ⬇                       ⬇");
-        System.out.println("|         1                     2                          3                        4");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tList All classes | List One class ");
-        System.out.println("|         ⬇                 ⬇");
-        System.out.println("|         5                  6 ");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|                Return to previous step ");
-        System.out.println("|                            ⬇");
-        System.out.println("|                            B ");
+        System.out.println("+\t-----------------==-******************-==------------------+");
+        System.out.println("|\t                    *  " + "Delete" + "  *                ");
+        System.out.println("|\t__________________________________________________________________________________");
+        System.out.println("|\tdelete student from a class | delete General Appointment | delete Oral Appointment");
+        System.out.println("|\t             ⬇                          ⬇                          ⬇ ");
+        System.out.println("|\t             Q                           W                          E ");
+        System.out.println("|\t__________________________________________________________________________________");
+        System.out.println("|\t                  Return to previous step ");
+        System.out.println("|\t                             ⬇");
+        System.out.println("|\t                             B ");
     }
 
-    public static void delete(){
+    public static void delete() throws IOException {
+        boolean continues = true;
+        char level;
+        int grade;
+        int index;
+        String classCode;  //H1101
+        String studentCode; //full ID
+        int classIndex;  //1 <= x <= 10
+        int studentIndex;  //x > 0
+        String date;
+        String time;
+        do {
+            char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform: ");
+            decisions = Character.toLowerCase(decisions);
+            System.out.println();
+
+            switch (decisions) {
+                case 'q':
+                    classIndex = IBIO.inputInt("Class Index? (1 to 10): ");
+                    studentIndex = IBIO.inputInt("Student Number? (11 or 12): ");
+                    ClassTest.confirm();
+                    ClassTest.removeStudent(classIndex, studentIndex);
+                    break;
+                case 'w':
+                    studentCode = IBIO.input("Please enter a student ID: ");
+                    ClassTest.confirm();
+                    StudentTest.check(studentCode);
+                    AppointmentManager.delete(studentCode);
+                    break;
+                case 'e':
+                    studentCode = IBIO.input("Please enter a student ID: ");
+                    ClassTest.confirm();
+                    StudentTest.check(studentCode);
+                    IOManager.delete(studentCode);
+                    break;
+                case 'b':
+                    continues = false;
+                    System.out.println("returning to Teacher Menu...");
+                    System.out.println("\t⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇");
+                    TeacherMenu.main(null);
+                    break;
+                default:
+                    System.out.println("Invalid Choice");
+                    break;
+            }
+        } while (continues);
 
     }
 
     public static void viewTable(){
-        System.out.println("+---------------==-******************-==----------------+");
-        System.out.println("|               *  " + "Management" + "  *                |");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tCreate class  |  edit class  |  view class");
-        System.out.println("|        ⬇              ⬇              ⬇");
-        System.out.println("|        C               E              K ");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tCreate student | edit student | delete student ");
-        System.out.println("|         ⬇             ⬇              ⬇");
-        System.out.println("|         S              U              D ");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tNew Oral appointment | Delete Oral appointment ");
-        System.out.println("|              ⬇                     ⬇");
-        System.out.println("|              X                      T ");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tNew General appointment | Delete General appointment ");
-        System.out.println("|              ⬇                         ⬇");
-        System.out.println("|              Z                          O ");
-        System.out.println("|================================================================================================");
-        System.out.println("|\tList All students | List Students by Level | List students by Grade | List students in a Class");
-        System.out.println("|         ⬇                    ⬇                          ⬇                       ⬇");
-        System.out.println("|         1                     2                          3                        4");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|\tList All classes | List One class ");
-        System.out.println("|         ⬇                 ⬇");
-        System.out.println("|         5                  6 ");
-        System.out.println("|_______________________________________________________");
-        System.out.println("|                Return to previous step ");
-        System.out.println("|                            ⬇");
-        System.out.println("|                            B ");
+        System.out.println("+\t---------------==-******************-==----------------+");
+        System.out.println("|\t               *  " + "View" + "  *                ");
+        System.out.println("|\t____________________________________________________");
+        System.out.println("|\tView general appointments  |  View oral appointments");
+        System.out.println("|\t           ⬇                            ⬇    ");
+        System.out.println("|\t           Q                             W    ");
+        System.out.println("|\t===========================================================================================================");
+        System.out.println("|\tList All students | List Students by Level | List students by Grade | List students in a Class by class code");
+        System.out.println("|\t         ⬇                    ⬇                          ⬇                       ⬇");
+        System.out.println("|\t         A                     S                          D                        F");
+        System.out.println("|\t_______________________________________________________");
+        System.out.println("|\tList All classes ");
+        System.out.println("|\t         ⬇      ");
+        System.out.println("|\t         Z     ");
+        System.out.println("|\t_______________________________________________________");
+        System.out.println("|\t                Return to previous step ");
+        System.out.println("|\t                            ⬇");
+        System.out.println("|\t                            B ");
     }
 
     public static void view(){
+        boolean continues = true;
+        char level;
+        int grade;
+        int index;
+        String classCode;  //H1101
+        String studentCode; //full ID
+        int classIndex;  //1 <= x <= 10
+        int studentIndex;  //x > 0
+        String date;
+        String time;
+        do {
+            char decisions = IBIO.inputChar("\nEnter a letter for the action you want to perform: ");
+            decisions = Character.toLowerCase(decisions);
+            System.out.println();
 
+            switch (decisions) {
+                case 'q':
+                    AppointmentManager.listAppointments();
+                    break;
+                case 'w':
+                    IOManager.listIOs();
+                    break;
+
+                case 'a':
+                    StudentTest.listAllStudents();
+                    break;
+                case 's':
+                    level = IBIO.inputChar("\tlevel? (H, S or P): ");
+                    StudentTest.listStudentsByLevel(level);
+                    break;
+                case 'd':
+                    grade = IBIO.inputInt("\tGrade? (11 or 12): ");
+                    StudentTest.listStudentsByGrade(grade);
+                    break;
+                case 'f':
+                    index = IBIO.inputInt("\tclass number? < 10: ");
+                    StudentTest.listStudentsByIndex(index);
+                    break;
+                case 'z':
+                    ClassTest.listAllClasses();
+                    break;
+                case 'b':
+                    continues = false;
+                    System.out.println("returning to Teacher Menu...");
+                    System.out.println("\t⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇");
+                    TeacherMenu.main(null);
+                    break;
+                default:
+                    System.out.println("Invalid Choice");
+                    break;
+            }
+        } while (continues);
     }
 
     public static void main(String[] args) {
         //continue from main menu
-        System.out.println("+----------==-******************-==----------------+");
+        System.out.println("+------------==-******************-==---------------+");
         System.out.println("|\t           *  " + "Teacher Menu" + "  *                ");
         System.out.println("|___________________________________________________|");
-        System.out.println("|\t    Management  |  Add  |  Delete | View");
-        System.out.println("|           ⬇          ⬇       ⬇       ⬇");
-        System.out.println("|           C           A       D        V ");
+        System.out.println("|\t    Management  |  Add  |  Delete  |  View");
+        System.out.println("|           ⬇          ⬇        ⬇        ⬇");
+        System.out.println("|           C           A        D         V ");
         System.out.println("|___________________________________________________|");
-        System.out.println("|\t           Return to MainMenu                    ");
-        System.out.println("|                     ⬇                             ");
-        System.out.println("|                     B                             ");
+        System.out.println("|\t             Return to Main Menu                    ");
+        System.out.println("|                       ⬇                             ");
+        System.out.println("|                       B                             ");
 
     }
 }

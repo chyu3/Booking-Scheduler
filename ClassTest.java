@@ -156,13 +156,21 @@ public class ClassTest {
     }
 
     //input ClassCode = level + grade  e.g. Classes that are Higher level and grade 12  would be H12
-    public static void listClasses(String ClassCode) {
+    public static void listClass(String ClassCode) {
         String currentClass;
         for (Class A : classes) {
             currentClass = A.getClassCode();
             if (currentClass.startsWith(ClassCode)) {
                 System.out.println(A);
             }
+        }
+    }
+
+    public static void listAllClasses()
+    {
+        for (Class s : classes)
+        {
+            System.out.println(s);
         }
     }
 
