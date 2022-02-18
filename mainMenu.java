@@ -7,12 +7,20 @@ public class mainMenu {
                 "\n\tRules:\n" +
                         "\t! Make sure a class is created before creating a student \n" +
                         "\t! Date input must follow the format: DD/MM/YYYY \n" +
-                        "\t! Time input" +
-                "\n\tInstructions:\n"
+                        "\t! Time input must follow the format: 00:00 \n" +
+                        "" +
+                "\n\tInstructions:\n" +
+                        "At least one class have to exist, if a student want to be added to a class!" +
+                        ""
         );
     }
+
+    //Alternative method for return to menus
     public static void quit(boolean c){
-            if (c == true)
+        boolean C;
+        C = c;
+        C = true;
+            if (C)
             {
                 return;
             }
@@ -20,7 +28,6 @@ public class mainMenu {
                 System.out.println("");
                 System.exit(0);
     }
-
 
     public static void main(String[] args) throws Exception {
         boolean continues = true;
@@ -57,11 +64,9 @@ public class mainMenu {
 
                 default:
                     System.out.println("Invalid Choice");
+                    main(null);  //recursive call
                     break;
             }
         } while (continues);
     }
 }
-
-
-//return to previous step?
