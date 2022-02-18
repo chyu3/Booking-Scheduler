@@ -41,6 +41,7 @@ public class ClassTest {
             int index = IBIO.inputInt("What is the index of this  class? (index<10): ");
             Student newStudent = new Student(level, grade, index);
 
+            //adding students after a class is created
             newClass.students.add(newStudent);
             noOfStudents++;
             System.out.println(newStudent + " added");
@@ -164,9 +165,7 @@ public class ClassTest {
             }
         }
     }
-
-
-
+    
     public static void main(String[] args) {
         createClass();
     }
