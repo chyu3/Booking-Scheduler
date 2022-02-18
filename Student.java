@@ -50,5 +50,9 @@ public class Student {
         return this.getID().getNumber();
     }
 
-
+    @Override
+    public String toString()
+    {
+        return "Student ID: " + ID ;
+    }
 }
