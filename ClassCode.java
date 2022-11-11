@@ -2,8 +2,8 @@ import java.util.Locale;
 
 public class ClassCode {
     //ClassCode parameters
-    private final char Level;
-    private final int Grade;
+    private final char Level; //higher or lower (H or S or P)
+    private final int Grade; // grade 11 = 1, grade 12 = 2
     private int Index; //class number
     private int Number; //student's number or counter
 
